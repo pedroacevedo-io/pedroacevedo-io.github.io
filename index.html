@@ -69,11 +69,12 @@
 
     audio.volume = 0;
 
-    bridge.addEventListener('mouseenter', () => {
-      audio.currentTime = 0;
-      audio.volume = 0.25;
-      audio.play();
-    });
+    bridge.addEventListener('click', () => {
+  audio.currentTime = 0;
+  audio.volume = 0.25;
+  audio.play();
+});
+
 
     bridge.addEventListener('mouseleave', () => {
       audio.volume = 0;
