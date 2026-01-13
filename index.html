@@ -80,58 +80,38 @@
     - No suena solo
     - Espera a que el usuario lo "desbloquee"
   -->
-  <audio
-    id="bosque-audio"
-    src="assets/bosque.wav"
-    loop
-    preload="auto">
+<audio
+  id="bosque-audio"
+  src="assets/bosque.wav"
+  preload="auto">
+</audio>
+
   </audio>
 
   <script>
-    /*
-      REFERENCIAS
-      bridge = el enlace del puente
-      audio  = el sonido del bosque
-    */
-    const bridge = document.querySelector('.bridge');
-    const audio = document.getElementById('bosque-audio');
+  const bridge = document.querySelector('.bridge');
+  const audio = document.getElementById('bosque-audio');
 
-    /*
-      Esta variable recuerda si el usuario
-      ya ha dado permiso al sonido
-    */
-    let audioUnlocked = false;
+  let audioUnlocked = false;
 
-    /* El sonido empieza en silencio */
-    audio.volume = 0;
+  bridge.addEventListener('click', (e) => {
+    if (!audioUnlocked) {
+      e.preventDefault();
 
-    /*
-      PRIMER GESTO CONSCIENTE
-      - Primer click: activa el sonido, NO navega
-      - Segundo click: ya navega a Bandcamp
-    */
-    bridge.addEventListener('click', (e) => {
-      if (!audioUnlocked) {
-        e.preventDefault(); // bloquea la navegación solo esta vez
+      audio.volume = 0.3;
 
-        audio.currentTime = 0;  // empezamos desde el inicio
-        audio.volume = 0.25;    // volumen bajo, atmosférico
-        audio.play();           // el bosque aparece
+      audio.play()
+        .then(() => {
+          console.log('Audio desbloqueado');
+          audioUnlocked = true;
+        })
+        .catch(err => {
+          console.log('Error audio:', err);
+        });
+    }
+  });
+</script>
 
-        audioUnlocked = true;   // a partir de ahora, el sonido está permitido
-      }
-    });
-
-    /*
-      PASAR EL RATÓN
-      Solo funciona si el sonido ya está desbloqueado
-    */
-    bridge.addEventListener('mouseenter', () => {
-      if (audioUnlocked) {
-        audio.volume = 0.25;
-        audio.play();
-      }
-    });
 
     /*
       SALIR DEL PUENTE
