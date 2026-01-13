@@ -1,11 +1,17 @@
 <!doctype html>
 <html lang="es">
 <head>
+  <!-- Codificación básica -->
   <meta charset="utf-8">
+
+  <!-- Título de la página (lo que se ve en la pestaña del navegador) -->
   <title>Pedro Acevedo</title>
+
+  <!-- Hace que la web se adapte bien a móviles -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <style>
+    /* Quitamos márgenes por defecto y fijamos fondo */
     html, body {
       margin: 0;
       padding: 0;
@@ -13,40 +19,52 @@
       height: 100%;
     }
 
+    /* Centramos el contenido y damos aire alrededor */
     body {
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 4vh 6vw;
+      padding: 4vh 6vw; /* aire vertical y horizontal */
     }
 
+    /* El enlace que envuelve la imagen (el "puente") */
     a.bridge {
       display: block;
-      max-width: 1200px;
+      max-width: 1200px; /* límite de ancho en pantallas grandes */
       width: 100%;
-      padding: 2rem;
+      padding: 2rem; /* separación del borde */
       box-sizing: border-box;
       cursor: pointer;
     }
 
+    /* La imagen del puente */
     a.bridge img {
       width: 100%;
-      height: 55vh;
-      object-fit: cover;
-      object-position: center;
+      height: 55vh;              /* formato panorámico, no gigante */
+      object-fit: cover;        /* recorta como una lente */
+      object-position: center;  /* el puente manda */
       display: block;
-      border-radius: 6px;
+
+      border-radius: 6px;       /* bordes orgánicos, no técnicos */
+
+      /* Transiciones suaves (imagen viva, no UI) */
       transition: transform 0.6s ease;
     }
 
+    /* Gesto mínimo al pasar el ratón */
     a.bridge:hover img {
-      transform: scale(1.01);
+      transform: scale(1.01);  /* respiración, no efecto */
     }
   </style>
 </head>
 
 <body>
 
+  <!--
+    ENLACE PRINCIPAL
+    Primer click: activa el sonido (no navega)
+    Segundo click: lleva a Bandcamp
+  -->
   <a
     class="bridge"
     href="https://pedroacevedo.bandcamp.com/album/octubre-2"
@@ -56,6 +74,12 @@
     <img src="assets/Bridge_variation1.png" alt="Puente en el bosque">
   </a>
 
+  <!--
+    AUDIO AMBIENTE
+    - No se ve
+    - No suena solo
+    - Espera a que el usuario lo "desbloquee"
+  -->
   <audio
     id="bosque-audio"
     src="assets/bosque.wav"
@@ -64,20 +88,59 @@
   </audio>
 
   <script>
+    /*
+      REFERENCIAS
+      bridge = el enlace del puente
+      audio  = el sonido del bosque
+    */
     const bridge = document.querySelector('.bridge');
     const audio = document.getElementById('bosque-audio');
 
+    /*
+      Esta variable recuerda si el usuario
+      ya ha dado permiso al sonido
+    */
+    let audioUnlocked = false;
+
+    /* El sonido empieza en silencio */
     audio.volume = 0;
 
-    bridge.addEventListener('click', () => {
-  audio.currentTime = 0;
-  audio.volume = 0.25;
-  audio.play();
-});
+    /*
+      PRIMER GESTO CONSCIENTE
+      - Primer click: activa el sonido, NO navega
+      - Segundo click: ya navega a Bandcamp
+    */
+    bridge.addEventListener('click', (e) => {
+      if (!audioUnlocked) {
+        e.preventDefault(); // bloquea la navegación solo esta vez
 
+        audio.currentTime = 0;  // empezamos desde el inicio
+        audio.volume = 0.25;    // volumen bajo, atmosférico
+        audio.play();           // el bosque aparece
 
+        audioUnlocked = true;   // a partir de ahora, el sonido está permitido
+      }
+    });
+
+    /*
+      PASAR EL RATÓN
+      Solo funciona si el sonido ya está desbloqueado
+    */
+    bridge.addEventListener('mouseenter', () => {
+      if (audioUnlocked) {
+        audio.volume = 0.25;
+        audio.play();
+      }
+    });
+
+    /*
+      SALIR DEL PUENTE
+      El sonido se apaga (sin cortar bruscamente)
+    */
     bridge.addEventListener('mouseleave', () => {
       audio.volume = 0;
+
+      /* Damos un poco de tiempo antes de parar */
       setTimeout(() => {
         audio.pause();
         audio.currentTime = 0;
