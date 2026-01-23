@@ -1,9 +1,9 @@
 <!doctype html>
 <html lang="es">
 <head>
-  <!-- =================================================
-       METADATOS BÁSICOS
-       ================================================= -->
+  <!-- ===============================
+       CONFIGURACIÓN BÁSICA
+       =============================== -->
 
   <!-- Codificación de caracteres -->
   <meta charset="utf-8">
@@ -11,40 +11,43 @@
   <!-- Título que aparece en la pestaña del navegador -->
   <title>Pedro Acevedo</title>
 
-  <!-- Hace que la web se vea bien en móviles -->
+  <!-- Hace la web responsive (móvil / tablet / escritorio) -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- =================================================
-       ESTILOS (CSS)
-       Todo lo visual vive aquí
-       ================================================= -->
   <style>
+    /* ===============================
+       RESET BÁSICO Y FONDO
+       =============================== */
 
-    /* Reset básico y fondo */
     html, body {
       margin: 0;
       padding: 0;
       background: #ffffff;
       height: 100%;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: #111;
     }
 
-    /* Centramos el contenido en la página */
+    /* ===============================
+       ESTRUCTURA GENERAL
+       =============================== */
+
     body {
       display: flex;
+      flex-direction: column;      /* imagen arriba, texto debajo */
       align-items: center;
       justify-content: center;
-      padding: 4vh 6vw; /* aire alrededor */
+      padding: 4vh 6vw;            /* aire alrededor */
+      box-sizing: border-box;
     }
 
-    /* Contenedor principal (imagen + texto) */
-    .container {
-      width: 100%;
-      max-width: 1200px;
-    }
+    /* ===============================
+       PUENTE (ENLACE PRINCIPAL)
+       =============================== */
 
-    /* Enlace principal: el puente */
     a.bridge {
       display: block;
+      max-width: 1200px;           /* límite en pantallas grandes */
       width: 100%;
       padding: 2rem;
       box-sizing: border-box;
@@ -54,129 +57,61 @@
     /* Imagen del puente */
     a.bridge img {
       width: 100%;
-      height: 55vh;              /* panorámico, no gigante */
-      object-fit: cover;        /* recorta sin deformar */
-      object-position: center;  /* el puente manda */
+      height: 55vh;                /* panorámico, cinematográfico */
+      object-fit: cover;           /* recorte natural */
+      object-position: center;     /* el puente manda */
       display: block;
 
-      border-radius: 6px;       /* bordes orgánicos */
-
-      /* Transición suave: imagen viva */
-      transition: transform 0.6s ease;
+      border-radius: 6px;          /* bordes suaves */
+      transition: transform 0.6s ease; /* respiración */
     }
 
     /* Gesto mínimo al pasar el ratón */
     a.bridge:hover img {
-      transform: scale(1.01);   /* respiración */
+      transform: scale(1.01);
     }
 
-    /* Mini biografía debajo del puente */
+    /* ===============================
+       MINI BIO
+       =============================== */
+
     .bio {
-      margin-top: 1.2rem;
-      padding: 0 2rem;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      max-width: 900px;
+      margin-top: 1.5rem;
       font-size: 0.95rem;
-      line-height: 1.5;
-      color: #222;
+      line-height: 1.4;
+      text-align: left;
     }
 
+    .bio strong {
+      font-weight: 600;
+    }
   </style>
 </head>
 
 <body>
 
-  <!-- =================================================
-       CONTENIDO PRINCIPAL
-       ================================================= -->
-  <div class="container">
-
-    <!--
-      ENLACE PRINCIPAL
-      El puente lleva a Bandcamp
-    -->
-    <a
-      class="bridge"
-      href="https://pedroacevedo.bandcamp.com/album/octubre-2"
-      target="_blank"
-      rel="noopener noreferrer"
+  <!-- ===============================
+       IMAGEN / PUENTE
+       =============================== -->
+  <a
+    class="bridge"
+    href="https://pedroacevedo.bandcamp.com/album/octubre-2"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <img
+      src="assets/Bridge_variation1.png"
+      alt="Puente en el bosque"
     >
-      <img
-        src="assets/Bridge_variation1.png"
-        alt="Puente en el bosque"
-      >
-    </a>
+  </a>
 
-    <!--
-      MINI BIO
-      Texto sencillo, sin robar protagonismo
-    -->
-    <div class="bio">
-      <strong>Pedro Acevedo</strong><br>
-      Músico y compositor. Trabajo con sonido, voz e instrumentos.<br>
-      Compongo música para discos, cine y escena.
-    </div>
-
-  </div>
-
-  <!-- =================================================
-       AUDIO AMBIENTE
-       (no visible, no automático)
-       ================================================= -->
-  <audio
-    id="bosque-audio"
-    src="assets/bosque.wav"
-    preload="auto">
-  </audio>
-
-  <!-- =================================================
-       JAVASCRIPT
-       Comportamiento de la página
-       ================================================= -->
-  <script>
-
-    /* Referencias a elementos */
-    const bridge = document.querySelector('.bridge');
-    const audio  = document.getElementById('bosque-audio');
-
-    /* Estado: si el audio ya fue desbloqueado */
-    let audioUnlocked = false;
-
-    /*
-      PRIMER CLICK
-      - Evita navegar
-      - Desbloquea el audio (reglas del navegador)
-    */
-    bridge.addEventListener('click', (e) => {
-      if (!audioUnlocked) {
-        e.preventDefault();      // No navegar todavía
-        audio.volume = 0.25;     // Volumen suave
-
-        audio.play()
-          .then(() => {
-            audioUnlocked = true;
-            console.log('Audio desbloqueado');
-          })
-          .catch(err => {
-            console.log('Error de audio:', err);
-          });
-      }
-    });
-
-    /*
-      SALIR DEL PUENTE
-      - Baja el volumen
-      - Para el sonido con suavidad
-    */
-    bridge.addEventListener('mouseleave', () => {
-      audio.volume = 0;
-
-      setTimeout(() => {
-        audio.pause();
-        audio.currentTime = 0;
-      }, 1000);
-    });
-
-  </script>
+  <!-- ===============================
+       TEXTO / IDENTIDAD
+       =============================== -->
+  <p class="bio">
+    <strong>Pedro Acevedo</strong> — Músico y compositor. Trabajo con sonido, voz e instrumentos. Compongo música para discos, cine y escena.
+  </p>
 
 </body>
 </html>
