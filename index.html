@@ -1,17 +1,26 @@
 <!doctype html>
 <html lang="es">
 <head>
-  <!-- Codificación básica -->
+  <!-- =================================================
+       METADATOS BÁSICOS
+       ================================================= -->
+
+  <!-- Codificación de caracteres -->
   <meta charset="utf-8">
 
-  <!-- Título de la página (lo que se ve en la pestaña del navegador) -->
+  <!-- Título que aparece en la pestaña del navegador -->
   <title>Pedro Acevedo</title>
 
-  <!-- Hace que la web se adapte bien a móviles -->
+  <!-- Hace que la web se vea bien en móviles -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
+  <!-- =================================================
+       ESTILOS (CSS)
+       Todo lo visual vive aquí
+       ================================================= -->
   <style>
-    /* Quitamos márgenes por defecto y fijamos fondo */
+
+    /* Reset básico y fondo */
     html, body {
       margin: 0;
       padding: 0;
@@ -19,113 +28,154 @@
       height: 100%;
     }
 
-    /* Centramos el contenido y damos aire alrededor */
+    /* Centramos el contenido en la página */
     body {
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 4vh 6vw; /* aire vertical y horizontal */
+      padding: 4vh 6vw; /* aire alrededor */
     }
 
-    /* El enlace que envuelve la imagen (el "puente") */
+    /* Contenedor principal (imagen + texto) */
+    .container {
+      width: 100%;
+      max-width: 1200px;
+    }
+
+    /* Enlace principal: el puente */
     a.bridge {
       display: block;
-      max-width: 1200px; /* límite de ancho en pantallas grandes */
       width: 100%;
-      padding: 2rem; /* separación del borde */
+      padding: 2rem;
       box-sizing: border-box;
       cursor: pointer;
     }
 
-    /* La imagen del puente */
+    /* Imagen del puente */
     a.bridge img {
       width: 100%;
-      height: 55vh;              /* formato panorámico, no gigante */
-      object-fit: cover;        /* recorta como una lente */
+      height: 55vh;              /* panorámico, no gigante */
+      object-fit: cover;        /* recorta sin deformar */
       object-position: center;  /* el puente manda */
       display: block;
 
-      border-radius: 6px;       /* bordes orgánicos, no técnicos */
+      border-radius: 6px;       /* bordes orgánicos */
 
-      /* Transiciones suaves (imagen viva, no UI) */
+      /* Transición suave: imagen viva */
       transition: transform 0.6s ease;
     }
 
     /* Gesto mínimo al pasar el ratón */
     a.bridge:hover img {
-      transform: scale(1.01);  /* respiración, no efecto */
+      transform: scale(1.01);   /* respiración */
     }
+
+    /* Mini biografía debajo del puente */
+    .bio {
+      margin-top: 1.2rem;
+      padding: 0 2rem;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 0.95rem;
+      line-height: 1.5;
+      color: #222;
+    }
+
   </style>
 </head>
 
 <body>
 
-  <!--
-    ENLACE PRINCIPAL
-    Primer click: activa el sonido (no navega)
-    Segundo click: lleva a Bandcamp
-  -->
-  <a
-    class="bridge"
-    href="https://pedroacevedo.bandcamp.com/album/octubre-2"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    <img src="assets/Bridge_variation1.png" alt="Puente en el bosque">
-  </a>
+  <!-- =================================================
+       CONTENIDO PRINCIPAL
+       ================================================= -->
+  <div class="container">
 
-  <!--
-    AUDIO AMBIENTE
-    - No se ve
-    - No suena solo
-    - Espera a que el usuario lo "desbloquee"
-  -->
-<audio
-  id="bosque-audio"
-  src="assets/bosque.wav"
-  preload="auto">
-</audio>
+    <!--
+      ENLACE PRINCIPAL
+      El puente lleva a Bandcamp
+    -->
+    <a
+      class="bridge"
+      href="https://pedroacevedo.bandcamp.com/album/octubre-2"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <img
+        src="assets/Bridge_variation1.png"
+        alt="Puente en el bosque"
+      >
+    </a>
 
+    <!--
+      MINI BIO
+      Texto sencillo, sin robar protagonismo
+    -->
+    <div class="bio">
+      <strong>Pedro Acevedo</strong><br>
+      Músico y compositor. Trabajo con sonido, voz e instrumentos.<br>
+      Compongo música para discos, cine y escena.
+    </div>
+
+  </div>
+
+  <!-- =================================================
+       AUDIO AMBIENTE
+       (no visible, no automático)
+       ================================================= -->
+  <audio
+    id="bosque-audio"
+    src="assets/bosque.wav"
+    preload="auto">
   </audio>
 
+  <!-- =================================================
+       JAVASCRIPT
+       Comportamiento de la página
+       ================================================= -->
   <script>
-  const bridge = document.querySelector('.bridge');
-  const audio = document.getElementById('bosque-audio');
 
-  let audioUnlocked = false;
+    /* Referencias a elementos */
+    const bridge = document.querySelector('.bridge');
+    const audio  = document.getElementById('bosque-audio');
 
-  bridge.addEventListener('click', (e) => {
-    if (!audioUnlocked) {
-      e.preventDefault();
+    /* Estado: si el audio ya fue desbloqueado */
+    let audioUnlocked = false;
 
-      audio.volume = 0.3;
+    /*
+      PRIMER CLICK
+      - Evita navegar
+      - Desbloquea el audio (reglas del navegador)
+    */
+    bridge.addEventListener('click', (e) => {
+      if (!audioUnlocked) {
+        e.preventDefault();      // No navegar todavía
+        audio.volume = 0.25;     // Volumen suave
 
-      audio.play()
-        .then(() => {
-          console.log('Audio desbloqueado');
-          audioUnlocked = true;
-        })
-        .catch(err => {
-          console.log('Error audio:', err);
-        });
-    }
-  });
-</script>
-
+        audio.play()
+          .then(() => {
+            audioUnlocked = true;
+            console.log('Audio desbloqueado');
+          })
+          .catch(err => {
+            console.log('Error de audio:', err);
+          });
+      }
+    });
 
     /*
       SALIR DEL PUENTE
-      El sonido se apaga (sin cortar bruscamente)
+      - Baja el volumen
+      - Para el sonido con suavidad
     */
     bridge.addEventListener('mouseleave', () => {
       audio.volume = 0;
 
-      /* Damos un poco de tiempo antes de parar */
       setTimeout(() => {
         audio.pause();
         audio.currentTime = 0;
       }, 1000);
     });
+
   </script>
 
 </body>
