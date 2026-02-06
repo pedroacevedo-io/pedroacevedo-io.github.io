@@ -1,158 +1,146 @@
 <!doctype html>
 <html lang="es">
 <head>
-  <!-- Codificación -->
+  <!-- =========================
+       METADATOS BÁSICOS
+       ========================= -->
   <meta charset="utf-8">
-
-  <!-- Título -->
   <title>Pedro Acevedo</title>
-
-  <!-- Responsive -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <style>
-    /* Reset básico */
+    /* =========================
+       RESET Y FONDO
+       ========================= */
     html, body {
       margin: 0;
       padding: 0;
-      background: #ffffff;
       height: 100%;
-      font-family: serif;
+      background: #ffffff;
     }
 
-    /* Contenedor general */
+    /* =========================
+       CUERPO GENERAL
+       ========================= */
     body {
       display: flex;
       flex-direction: column;
       align-items: center;
+      justify-content: center;
       padding: 4vh 6vw;
       box-sizing: border-box;
     }
 
-    /* ===== PUENTE ===== */
-
+    /* =========================
+       PUENTE (imagen principal)
+       ========================= */
     a.bridge {
       display: block;
       max-width: 1200px;
       width: 100%;
       padding: 2rem;
       box-sizing: border-box;
-      cursor: pointer;
-      text-decoration: none;
     }
 
     a.bridge img {
       width: 100%;
-      height: 55vh;              /* panorámico */
-      object-fit: cover;        /* recorte natural */
-      object-position: center;  /* el puente manda */
+      height: 55vh;
+      object-fit: cover;
+      object-position: center;
       display: block;
+      border-radius: 6px;
 
-      border-radius: 8px;       /* orgánico */
+      /* respiración visual */
       transition: transform 0.6s ease;
     }
 
     a.bridge:hover img {
-      transform: scale(1.01);   /* respiración */
+      transform: scale(1.01);
     }
 
-    /* ===== TEXTO ===== */
-
+    /* =========================
+       MINI BIO
+       ========================= */
     .bio {
-      max-width: 900px;
-      text-align: center;
       margin-top: 1.5rem;
-      font-size: 1rem;
-      line-height: 1.5;
+      font-size: 0.95rem;
+      color: #111;
+      text-align: center;
+      max-width: 900px;
+      line-height: 1.4;
     }
 
-    /* ===== BOTONES ===== */
-
-    .buttons {
+    /* =========================
+       BOTÓN EXPANSIVO
+       ========================= */
+    .button {
       margin-top: 2rem;
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
 
-    .btn {
-      padding: 0.6rem 1.2rem;
-      border: 1px solid #000;
-      background: transparent;
-      color: #000;
+      /* apariencia mínima */
+      font-size: 0.85rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
       text-decoration: none;
-      font-size: 0.9rem;
-      letter-spacing: 0.05em;
-      cursor: pointer;
+      color: #111;
+
+      border: 1px solid #111;
+      border-radius: 999px;
+
+      /* estado base */
+      padding: 0.6rem 1.4rem;
+      width: auto;
+
+      /* transición orgánica */
+      transition:
+        padding 0.4s ease,
+        letter-spacing 0.4s ease,
+        background-color 0.4s ease;
     }
 
-    .btn:hover {
-      background: #000;
-      color: #fff;
+    /* expansión */
+    .button:hover,
+    .button:focus {
+      padding: 0.6rem 2.6rem;   /* se expande */
+      letter-spacing: 0.14em;  /* respira */
+      background-color: rgba(0,0,0,0.03);
     }
   </style>
 </head>
 
 <body>
 
-  <!-- ===== PUENTE (no navega) ===== -->
-  <a class="bridge" href="#">
-    <img src="assets/Bridge_variation1.png" alt="Puente en el bosque">
+  <!-- =========================
+       PUENTE
+       ========================= -->
+  <a
+    class="bridge"
+    href="#"
+    aria-label="Puente sonoro"
+  >
+    <img
+      src="assets/Bridge_variation1.png"
+      alt="Puente en el bosque"
+    >
   </a>
 
-  <!-- ===== TEXTO ===== -->
+  <!-- =========================
+       BIO
+       ========================= -->
   <div class="bio">
     <strong>Pedro Acevedo</strong> — Músico y compositor. Trabajo con sonido, voz e instrumentos para discos, cine y escena.
   </div>
 
-  <!-- ===== BOTONES ===== -->
-  <div class="buttons">
-    <a class="btn" href="https://pedroacevedo.bandcamp.com" target="_blank">
-      ÁLBUMS
-    </a>
-    <!-- Más adelante: CINE / ESCENA / PERFORMANCE -->
-  </div>
-
-  <!-- ===== AUDIO AMBIENTE ===== -->
-  <audio
-    id="river-audio"
-    src="assets/bosque_mp3.mp3"
-    preload="auto">
-  </audio>
-
-  <script>
-    /*
-      AUDIO AMBIENTE – RÍO
-      -------------------
-      - Se desbloquea con el primer click
-      - No navega
-      - Volumen bajo
-      - Puede seguir sonando aunque cierres
-    */
-
-    const bridge = document.querySelector('.bridge');
-    const audio = document.getElementById('river-audio');
-
-    let audioUnlocked = false;
-
-    audio.volume = 0.25; // volumen base (muy importante)
-
-    bridge.addEventListener('click', (e) => {
-      e.preventDefault();
-
-      if (!audioUnlocked) {
-        audio.play()
-          .then(() => {
-            audioUnlocked = true;
-            console.log('Audio desbloqueado');
-          })
-          .catch(err => {
-            console.log('Audio bloqueado por el navegador:', err);
-          });
-      }
-    });
-  </script>
+  <!-- =========================
+       BOTÓN
+       ========================= -->
+  <a
+    class="button"
+    href="https://pedroacevedo.bandcamp.com/"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    Albums
+  </a>
 
 </body>
 </html>
