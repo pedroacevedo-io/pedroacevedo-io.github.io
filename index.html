@@ -157,7 +157,7 @@
 
     let audioUnlocked = false;
 
-    /* volumen base */
+    /* volumen base del río */
     audio.volume = 0.25;
 
     /*
@@ -181,13 +181,13 @@
     /*
       CLICK EN ÁLBUMS
       ----------------
-      - fade out lento del río
-      - después navega
+      - fade out lento del río (4 segundos)
+      - después navega a Bandcamp
     */
     albumsBtn.addEventListener('click', (e) => {
       e.preventDefault();
 
-      let fadeDuration = 2000; // ms
+      let fadeDuration = 4000; // 4 segundos
       let steps = 20;
       let stepTime = fadeDuration / steps;
       let volumeStep = audio.volume / steps;
