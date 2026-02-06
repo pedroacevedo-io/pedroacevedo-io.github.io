@@ -1,39 +1,36 @@
 <!doctype html>
 <html lang="es">
 <head>
-  <!-- =========================
-       METADATOS BÁSICOS
-       ========================= -->
+  <!-- Codificación -->
   <meta charset="utf-8">
+
+  <!-- Título -->
   <title>Pedro Acevedo</title>
+
+  <!-- Responsive -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <style>
-    /* =========================
-       RESET Y FONDO
-       ========================= */
+    /* Reset básico */
     html, body {
       margin: 0;
       padding: 0;
-      height: 100%;
       background: #ffffff;
+      height: 100%;
+      font-family: serif;
     }
 
-    /* =========================
-       CUERPO: centrado y aire
-       ========================= */
+    /* Contenedor general */
     body {
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
       padding: 4vh 6vw;
       box-sizing: border-box;
     }
 
-    /* =========================
-       PUENTE (enlace principal)
-       ========================= */
+    /* ===== PUENTE ===== */
+
     a.bridge {
       display: block;
       max-width: 1200px;
@@ -41,137 +38,118 @@
       padding: 2rem;
       box-sizing: border-box;
       cursor: pointer;
+      text-decoration: none;
     }
 
-    /* Imagen del puente */
     a.bridge img {
       width: 100%;
-      height: 55vh;              /* panorámico, no gigante */
-      object-fit: cover;        /* recorta sin deformar */
-      object-position: center;  /* puente centrado */
+      height: 55vh;              /* panorámico */
+      object-fit: cover;        /* recorte natural */
+      object-position: center;  /* el puente manda */
       display: block;
 
-      border-radius: 6px;       /* orgánico */
+      border-radius: 8px;       /* orgánico */
       transition: transform 0.6s ease;
     }
 
-    /* Gesto mínimo al pasar el ratón */
     a.bridge:hover img {
       transform: scale(1.01);   /* respiración */
     }
 
-    /* =========================
-       MINI BIO
-       ========================= */
+    /* ===== TEXTO ===== */
+
     .bio {
-      margin-top: 1.5rem;
-      font-size: 0.95rem;
-      color: #111;
-      text-align: center;
       max-width: 900px;
-      line-height: 1.4;
+      text-align: center;
+      margin-top: 1.5rem;
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+
+    /* ===== BOTONES ===== */
+
+    .buttons {
+      margin-top: 2rem;
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .btn {
+      padding: 0.6rem 1.2rem;
+      border: 1px solid #000;
+      background: transparent;
+      color: #000;
+      text-decoration: none;
+      font-size: 0.9rem;
+      letter-spacing: 0.05em;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      background: #000;
+      color: #fff;
     }
   </style>
 </head>
 
 <body>
 
-  <!-- =========================
-       PUENTE / ENTRADA
-       =========================
-       - Visualmente es la entrada
-       - El audio se activa con interacción
-       - El click lleva a Bandcamp
-  -->
-  <a
-    class="bridge"
-    href="https://pedroacevedo.bandcamp.com/"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    <img
-      src="assets/Bridge_variation1.png"
-      alt="Puente en el bosque"
-    >
+  <!-- ===== PUENTE (no navega) ===== -->
+  <a class="bridge" href="#">
+    <img src="assets/Bridge_variation1.png" alt="Puente en el bosque">
   </a>
 
-  <!-- =========================
-       TEXTO BREVE
-       ========================= -->
+  <!-- ===== TEXTO ===== -->
   <div class="bio">
     <strong>Pedro Acevedo</strong> — Músico y compositor. Trabajo con sonido, voz e instrumentos para discos, cine y escena.
   </div>
 
-  <!-- =========================
-       AUDIO AMBIENTE
-       =========================
-       - Invisible
-       - No autoplay real (limitación navegador)
-       - Se carga antes (preload)
-  -->
+  <!-- ===== BOTONES ===== -->
+  <div class="buttons">
+    <a class="btn" href="https://pedroacevedo.bandcamp.com" target="_blank">
+      ÁLBUMS
+    </a>
+    <!-- Más adelante: CINE / ESCENA / PERFORMANCE -->
+  </div>
+
+  <!-- ===== AUDIO AMBIENTE ===== -->
   <audio
-    id="bosque-audio"
+    id="river-audio"
     src="assets/bosque_mp3.mp3"
-    preload="auto"
-    loop>
+    preload="auto">
   </audio>
 
-  <!-- =========================
-       SCRIPT
-       ========================= -->
   <script>
-    const bridge = document.querySelector('.bridge');
-    const audio  = document.getElementById('bosque-audio');
-
-    /* Volumen inicial bajo */
-    audio.volume = 0.25;
-
     /*
-      IMPORTANTE (esto es clave):
-      --------------------------------
-      Chrome / Firefox / Edge SOLO permiten
-      que el audio empiece DESPUÉS de una
-      interacción del usuario.
-
-      Pasar el ratón NO cuenta siempre.
-      El primer click "desbloquea" el audio.
+      AUDIO AMBIENTE – RÍO
+      -------------------
+      - Se desbloquea con el primer click
+      - No navega
+      - Volumen bajo
+      - Puede seguir sonando aunque cierres
     */
+
+    const bridge = document.querySelector('.bridge');
+    const audio = document.getElementById('river-audio');
 
     let audioUnlocked = false;
 
-    /* Primer click: desbloquea audio, no navega */
-    bridge.addEventListener('click', (e) => {
-      if (!audioUnlocked) {
-        e.preventDefault();
+    audio.volume = 0.25; // volumen base (muy importante)
 
+    bridge.addEventListener('click', (e) => {
+      e.preventDefault();
+
+      if (!audioUnlocked) {
         audio.play()
           .then(() => {
             audioUnlocked = true;
             console.log('Audio desbloqueado');
           })
           .catch(err => {
-            console.log('Error audio:', err);
+            console.log('Audio bloqueado por el navegador:', err);
           });
-      }
-    });
-
-    /* Una vez desbloqueado, el hover sí funciona */
-    bridge.addEventListener('mouseenter', () => {
-      if (audioUnlocked) {
-        audio.play();
-      }
-    });
-
-    bridge.addEventListener('mouseleave', () => {
-      if (audioUnlocked) {
-        audio.volume = 0;
-
-        /* apagado suave */
-        setTimeout(() => {
-          audio.pause();
-          audio.currentTime = 0;
-          audio.volume = 0.25;
-        }, 800);
       }
     });
   </script>
