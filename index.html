@@ -17,6 +17,7 @@
       padding: 0;
       height: 100%;
       background: #ffffff;
+      font-family: serif;
     }
 
     /* =========================
@@ -40,6 +41,8 @@
       width: 100%;
       padding: 2rem;
       box-sizing: border-box;
+      cursor: pointer;
+      text-decoration: none;
     }
 
     a.bridge img {
@@ -76,7 +79,6 @@
     .button {
       margin-top: 2rem;
 
-      /* apariencia mínima */
       font-size: 0.85rem;
       letter-spacing: 0.08em;
       text-transform: uppercase;
@@ -86,22 +88,18 @@
       border: 1px solid #111;
       border-radius: 999px;
 
-      /* estado base */
       padding: 0.6rem 1.4rem;
-      width: auto;
 
-      /* transición orgánica */
       transition:
         padding 0.4s ease,
         letter-spacing 0.4s ease,
         background-color 0.4s ease;
     }
 
-    /* expansión */
     .button:hover,
     .button:focus {
-      padding: 0.6rem 2.6rem;   /* se expande */
-      letter-spacing: 0.14em;  /* respira */
+      padding: 0.6rem 2.6rem;
+      letter-spacing: 0.14em;
       background-color: rgba(0,0,0,0.03);
     }
   </style>
@@ -111,12 +109,10 @@
 
   <!-- =========================
        PUENTE
+       - Click: activa el río
+       - No navega
        ========================= -->
-  <a
-    class="bridge"
-    href="#"
-    aria-label="Puente sonoro"
-  >
+  <a class="bridge" href="#">
     <img
       src="assets/Bridge_variation1.png"
       alt="Puente en el bosque"
@@ -131,16 +127,84 @@
   </div>
 
   <!-- =========================
-       BOTÓN
+       BOTÓN ÁLBUMS
        ========================= -->
   <a
-    class="button"
+    class="button albums"
     href="https://pedroacevedo.bandcamp.com/"
     target="_blank"
     rel="noopener noreferrer"
   >
     Albums
   </a>
+
+  <!-- =========================
+       AUDIO DEL RÍO
+       ========================= -->
+  <audio
+    id="river-audio"
+    src="assets/bosque_mp3.mp3"
+    preload="auto">
+  </audio>
+
+  <!-- =========================
+       SCRIPT
+       ========================= -->
+  <script>
+    const bridge = document.querySelector('.bridge');
+    const audio = document.getElementById('river-audio');
+    const albumsBtn = document.querySelector('.albums');
+
+    let audioUnlocked = false;
+
+    /* volumen base */
+    audio.volume = 0.25;
+
+    /*
+      CLICK EN EL PUENTE
+      ------------------
+      - desbloquea el audio
+      - hace sonar el río
+    */
+    bridge.addEventListener('click', (e) => {
+      e.preventDefault();
+
+      if (!audioUnlocked) {
+        audio.play()
+          .then(() => {
+            audioUnlocked = true;
+          })
+          .catch(err => console.log('Audio bloqueado:', err));
+      }
+    });
+
+    /*
+      CLICK EN ÁLBUMS
+      ----------------
+      - fade out lento del río
+      - después navega
+    */
+    albumsBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+
+      let fadeDuration = 2000; // ms
+      let steps = 20;
+      let stepTime = fadeDuration / steps;
+      let volumeStep = audio.volume / steps;
+
+      let fade = setInterval(() => {
+        if (audio.volume > volumeStep) {
+          audio.volume -= volumeStep;
+        } else {
+          audio.volume = 0;
+          audio.pause();
+          clearInterval(fade);
+
+          window.open(albumsBtn.href, '_blank', 'noopener');
+        }
+      }, stepTime);
+    });
+  </script>
 
 </body>
 </html>
