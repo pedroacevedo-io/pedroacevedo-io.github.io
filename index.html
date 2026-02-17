@@ -9,10 +9,6 @@
 
 <style>
 
-/* =========================
-   RESET
-   ========================= */
-
 html, body {
   margin: 0;
   padding: 0;
@@ -22,12 +18,10 @@ html, body {
   scroll-behavior: smooth;
 }
 
-/* =========================
-   HERO
-   ========================= */
+/* HERO MÁS COMPACTO */
 
 .hero {
-  height: 100vh;
+  height: 88vh;                /* 👈 reducido */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -44,7 +38,7 @@ html, body {
 
 .bridge img {
   width: 100%;
-  height: 52vh;
+  height: 48vh;               /* 👈 también reducimos imagen */
   object-fit: cover;
   border-radius: 6px;
   transition: transform .6s ease;
@@ -55,16 +49,12 @@ html, body {
 }
 
 .bio {
-  margin-top: 1.2rem;
+  margin-top: 1rem;
   font-size: .95rem;
 }
 
-/* =========================
-   NAVEGACIÓN
-   ========================= */
-
 nav {
-  margin-top: 2rem;
+  margin-top: 1.6rem;
   font-size: .85rem;
   letter-spacing: .06em;
 }
@@ -79,14 +69,12 @@ nav a:hover {
   opacity: .6;
 }
 
-/* =========================
-   CONTENIDO
-   ========================= */
+/* CONTENIDO */
 
 section.content {
   max-width: 760px;
-  margin: 0 auto 8vh auto;     /* 👈 sin margen superior */
-  padding: 6vh 6vw 0 6vw;      /* 👈 espacio controlado arriba */
+  margin: 0 auto 8vh auto;
+  padding: 4vh 6vw 0 6vw;   /* 👈 menos espacio */
   line-height: 1.65;
 }
 
@@ -94,7 +82,7 @@ section.content h1 {
   text-align: center;
   font-weight: normal;
   font-size: 1.6rem;
-  margin-bottom: 3rem;
+  margin-bottom: 2.5rem;
 }
 
 section.content h2 {
@@ -102,17 +90,13 @@ section.content h2 {
   text-transform: uppercase;
   font-size: .8rem;
   letter-spacing: .18em;
-  margin-top: 3rem;
-  margin-bottom: 1.2rem;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
 }
-
-/* =========================
-   FILAS CINE
-   ========================= */
 
 .row {
   display: flex;
-  margin-bottom: .7rem;
+  margin-bottom: .6rem;
 }
 
 .year {
@@ -128,8 +112,6 @@ section.content h2 {
 </head>
 
 <body>
-
-<!-- HERO -->
 
 <section class="hero">
 
@@ -155,40 +137,20 @@ section.content h2 {
 
 </section>
 
-<!-- CINE -->
-
 <section id="cine" class="content">
 
   <h1>Cine</h1>
 
   <h2>Largometrajes</h2>
 
-  <div class="row">
-    <div class="year">2025</div>
-    <div class="title">Valle blanco, gallo negro — Dir. Álex Galán</div>
-  </div>
-
-  <div class="row">
-    <div class="year">2024</div>
-    <div class="title">Pico Sacro — Dir. Alberto Lobelle</div>
-  </div>
-
-  <div class="row">
-    <div class="year">2021</div>
-    <div class="title">Salvajes, el cuento del lobo — Dir. Álex Galán</div>
-  </div>
+  <div class="row"><div class="year">2025</div><div class="title">Valle blanco, gallo negro — Dir. Álex Galán</div></div>
+  <div class="row"><div class="year">2024</div><div class="title">Pico Sacro — Dir. Alberto Lobelle</div></div>
+  <div class="row"><div class="year">2021</div><div class="title">Salvajes, el cuento del lobo — Dir. Álex Galán</div></div>
 
   <h2>Mediometrajes</h2>
 
-  <div class="row">
-    <div class="year">2023</div>
-    <div class="title">Les Praeres — Dir. Iván Menéndez</div>
-  </div>
-
-  <div class="row">
-    <div class="year">2015</div>
-    <div class="title">The River — Dir. David Rodríguez Muñiz</div>
-  </div>
+  <div class="row"><div class="year">2023</div><div class="title">Les Praeres — Dir. Iván Menéndez</div></div>
+  <div class="row"><div class="year">2015</div><div class="title">The River — Dir. David Rodríguez Muñiz</div></div>
 
   <h2>Cortometrajes</h2>
 
