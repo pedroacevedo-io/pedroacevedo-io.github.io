@@ -1,17 +1,27 @@
 <!doctype html>
 <html lang="es">
+
 <head>
   <!-- =========================
        METADATOS BÁSICOS
        ========================= -->
   <meta charset="utf-8">
-  <title>Pedro Acevedo</title>
+
+  <!-- Título que aparece en Google -->
+  <title>Pedro Acevedo — Compositor</title>
+
+  <!-- Responsive -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
+  <!-- Descripción SEO -->
+  <meta name="description" content="Pedro Acevedo — Compositor de música original para cine, teatro e instalaciones. Discos y proyectos audiovisuales contemporáneos.">
+
+  <!-- =========================
+       ESTILOS (minimal)
+       ========================= -->
   <style>
-    /* =========================
-       RESET Y FONDO
-       ========================= */
+
+    /* RESET Y FONDO GENERAL */
     html, body {
       margin: 0;
       padding: 0;
@@ -20,9 +30,7 @@
       font-family: serif;
     }
 
-    /* =========================
-       CUERPO GENERAL
-       ========================= */
+    /* CENTRADO GENERAL */
     body {
       display: flex;
       flex-direction: column;
@@ -34,6 +42,7 @@
 
     /* =========================
        PUENTE (imagen principal)
+       - Es el acceso a Bandcamp
        ========================= */
     a.bridge {
       display: block;
@@ -41,8 +50,8 @@
       width: 100%;
       padding: 2rem;
       box-sizing: border-box;
-      cursor: pointer;
       text-decoration: none;
+      cursor: pointer;
     }
 
     a.bridge img {
@@ -53,7 +62,7 @@
       display: block;
       border-radius: 6px;
 
-      /* respiración visual */
+      /* leve respiración al pasar el cursor */
       transition: transform 0.6s ease;
     }
 
@@ -62,7 +71,7 @@
     }
 
     /* =========================
-       MINI BIO
+       BIO / IDENTIDAD
        ========================= */
     .bio {
       margin-top: 1.5rem;
@@ -73,35 +82,6 @@
       line-height: 1.4;
     }
 
-    /* =========================
-       BOTÓN EXPANSIVO
-       ========================= */
-    .button {
-      margin-top: 2rem;
-
-      font-size: 0.85rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      text-decoration: none;
-      color: #111;
-
-      border: 1px solid #111;
-      border-radius: 999px;
-
-      padding: 0.6rem 1.4rem;
-
-      transition:
-        padding 0.4s ease,
-        letter-spacing 0.4s ease,
-        background-color 0.4s ease;
-    }
-
-    .button:hover,
-    .button:focus {
-      padding: 0.6rem 2.6rem;
-      letter-spacing: 0.14em;
-      background-color: rgba(0,0,0,0.03);
-    }
   </style>
 </head>
 
@@ -109,10 +89,14 @@
 
   <!-- =========================
        PUENTE
-       - Click: activa el río
-       - No navega
+       - Click lleva a Bandcamp
        ========================= -->
-  <a class="bridge" href="#">
+  <a 
+    class="bridge"
+    href="https://pedroacevedo.bandcamp.com/"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
     <img
       src="assets/Bridge_variation1.png"
       alt="Puente en el bosque"
@@ -120,91 +104,12 @@
   </a>
 
   <!-- =========================
-       BIO
+       IDENTIDAD PROFESIONAL
        ========================= -->
   <div class="bio">
-    <strong>Pedro Acevedo</strong> — Músico y compositor. Trabajo con sonido, voz e instrumentos para discos, cine y escena.
+    <strong>Pedro Acevedo</strong> — Compositor. Música original para cine, teatro e instalaciones.
   </div>
 
-  <!-- =========================
-       BOTÓN ÁLBUMS
-       ========================= -->
-  <a
-    class="button albums"
-    href="https://pedroacevedo.bandcamp.com/"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    Albums
-  </a>
-
-  <!-- =========================
-       AUDIO DEL RÍO
-       ========================= -->
-  <audio
-    id="river-audio"
-    src="assets/bosque_mp3.mp3"
-    preload="auto">
-  </audio>
-
-  <!-- =========================
-       SCRIPT
-       ========================= -->
-  <script>
-    const bridge = document.querySelector('.bridge');
-    const audio = document.getElementById('river-audio');
-    const albumsBtn = document.querySelector('.albums');
-
-    let audioUnlocked = false;
-
-    /* volumen base del río */
-    audio.volume = 0.25;
-
-    /*
-      CLICK EN EL PUENTE
-      ------------------
-      - desbloquea el audio
-      - hace sonar el río
-    */
-    bridge.addEventListener('click', (e) => {
-      e.preventDefault();
-
-      if (!audioUnlocked) {
-        audio.play()
-          .then(() => {
-            audioUnlocked = true;
-          })
-          .catch(err => console.log('Audio bloqueado:', err));
-      }
-    });
-
-    /*
-      CLICK EN ÁLBUMS
-      ----------------
-      - fade out lento del río (4 segundos)
-      - después navega a Bandcamp
-    */
-    albumsBtn.addEventListener('click', (e) => {
-      e.preventDefault();
-
-      let fadeDuration = 4000; // 4 segundos
-      let steps = 20;
-      let stepTime = fadeDuration / steps;
-      let volumeStep = audio.volume / steps;
-
-      let fade = setInterval(() => {
-        if (audio.volume > volumeStep) {
-          audio.volume -= volumeStep;
-        } else {
-          audio.volume = 0;
-          audio.pause();
-          clearInterval(fade);
-
-          window.open(albumsBtn.href, '_blank', 'noopener');
-        }
-      }, stepTime);
-    });
-  </script>
-
 </body>
+
 </html>
