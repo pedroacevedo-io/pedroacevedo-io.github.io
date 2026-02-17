@@ -23,11 +23,11 @@ html, body {
 }
 
 /* =========================
-   HERO
+   HERO — Pantalla completa real
    ========================= */
 
 .hero {
-  min-height: 90vh;
+  height: 100vh;               /* 👈 clave */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -80,12 +80,12 @@ nav a:hover {
 }
 
 /* =========================
-   SECCIONES CONTENIDO
+   CONTENIDO
    ========================= */
 
 section.content {
   max-width: 760px;
-  margin: 6vh auto;
+  margin: 8vh auto;
   padding: 0 6vw;
   line-height: 1.65;
 }
@@ -129,9 +129,7 @@ section.content h2 {
 
 <body>
 
-<!-- =========================
-     HERO
-     ========================= -->
+<!-- HERO -->
 
 <section class="hero">
 
@@ -157,9 +155,7 @@ section.content h2 {
 
 </section>
 
-<!-- =========================
-     CINE
-     ========================= -->
+<!-- CINE -->
 
 <section id="cine" class="content">
 
@@ -172,56 +168,4 @@ section.content h2 {
     <div class="title">Valle blanco, gallo negro — Dir. Álex Galán</div>
   </div>
 
-  <div class="row">
-    <div class="year">2024</div>
-    <div class="title">Pico Sacro — Dir. Alberto Lobelle</div>
-  </div>
-
-  <div class="row">
-    <div class="year">2021</div>
-    <div class="title">Salvajes, el cuento del lobo — Dir. Álex Galán</div>
-  </div>
-
-  <h2>Mediometrajes</h2>
-
-  <div class="row">
-    <div class="year">2023</div>
-    <div class="title">Les Praeres — Dir. Iván Menéndez</div>
-  </div>
-
-  <div class="row">
-    <div class="year">2015</div>
-    <div class="title">The River — Dir. David Rodríguez Muñiz</div>
-  </div>
-
-  <h2>Cortometrajes</h2>
-
-  <div class="row">
-    <div class="year">2024</div>
-    <div class="title">Otro tono de azul — Dir. David Rodríguez Muñiz</div>
-  </div>
-
-  <div class="row">
-    <div class="year">2021</div>
-    <div class="title">Nyami Nyami — Dir. David Rodríguez Muñiz</div>
-  </div>
-
-  <div class="row">
-    <div class="year">2019</div>
-    <div class="title">Beyond the Glacier — Dir. David Rodríguez Muñiz</div>
-  </div>
-
-  <div class="row">
-    <div class="year">2017</div>
-    <div class="title">Refugiados — Dir. David Rodríguez Muñiz</div>
-  </div>
-
-  <div class="row">
-    <div class="year">2016</div>
-    <div class="title">Monstruo — Dir. David Rodríguez Muñiz</div>
-  </div>
-
-</section>
-
-</body>
-</html>
+  <d
