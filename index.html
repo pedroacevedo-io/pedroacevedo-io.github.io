@@ -1,144 +1,167 @@
 <!doctype html>
 <html lang="es">
-
 <head>
-  <!-- =========================
-       METADATOS BÁSICOS
-       ========================= -->
-  <meta charset="utf-8">
 
-  <title>Pedro Acevedo — Compositor</title>
+<meta charset="utf-8">
+<title>Pedro Acevedo — Compositor</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Pedro Acevedo — Compositor de música original para cine. Filmografía completa.">
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
 
-  <meta name="description" content="Pedro Acevedo — Compositor de música original para cine, escena e instalaciones. Archivo profesional y discografía.">
+html, body {
+  margin: 0;
+  padding: 0;
+  background: #ffffff;
+  font-family: serif;
+  color: #111;
+}
 
-  <!-- =========================
-       ESTILOS GENERALES
-       ========================= -->
-  <style>
+body {
+  text-align: center;
+}
 
-    /* RESET GLOBAL */
-    html, body {
-      margin: 0;
-      padding: 0;
-      height: 100%;
-      background: #ffffff;
-      font-family: serif;
-      color: #111;
-    }
+/* =========================
+   SECCIÓN HOME
+   ========================= */
 
-    /* CONTENEDOR CENTRAL */
-    body {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 6vh 8vw;
-      box-sizing: border-box;
-      text-align: center;
-    }
+.hero {
+  padding: 6vh 8vw 4vh 8vw;
+}
 
-    /* =========================
-       PUENTE (IMAGEN PRINCIPAL)
-       ========================= */
-    a.bridge {
-      display: block;
-      max-width: 1200px;
-      width: 100%;
-      padding: 2rem;
-      box-sizing: border-box;
-      text-decoration: none;
-    }
+a.bridge {
+  display: block;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem;
+}
 
-    a.bridge img {
-      width: 100%;
-      height: 55vh;
-      object-fit: cover;
-      object-position: center;
-      display: block;
-      border-radius: 6px;
-      transition: transform 0.6s ease;
-    }
+a.bridge img {
+  width: 100%;
+  height: 55vh;
+  object-fit: cover;
+  border-radius: 6px;
+  transition: transform .6s ease;
+}
 
-    a.bridge:hover img {
-      transform: scale(1.01);
-    }
+a.bridge:hover img {
+  transform: scale(1.01);
+}
 
-    /* =========================
-       IDENTIDAD
-       ========================= */
-    .bio {
-      margin-top: 1.8rem;
-      font-size: 0.95rem;
-      max-width: 900px;
-      line-height: 1.4;
-    }
+.bio {
+  margin-top: 1.5rem;
+  font-size: .95rem;
+}
 
-    .bio strong {
-      font-weight: normal;
-    }
+/* =========================
+   SECCIÓN CINE
+   ========================= */
 
-    /* =========================
-       NAVEGACIÓN ARCHIVO
-       ========================= */
-    nav {
-      margin-top: 3rem;
-      font-size: 0.85rem;
-      letter-spacing: 0.08em;
-    }
+.cine {
+  max-width: 900px;
+  margin: 8vh auto;
+  padding: 0 8vw;
+  text-align: left;
+  line-height: 1.6;
+}
 
-    nav a {
-      text-decoration: none;
-      color: #111;
-      margin: 0 1.2rem;
-      transition: opacity 0.3s ease;
-    }
+.cine h1 {
+  text-align: center;
+  font-weight: normal;
+  margin-bottom: 4rem;
+}
 
-    nav a:hover {
-      opacity: 0.6;
-    }
+.cine h2 {
+  font-weight: normal;
+  text-transform: uppercase;
+  font-size: .9rem;
+  letter-spacing: .12em;
+  margin-top: 4rem;
+  margin-bottom: 1.5rem;
+}
 
-  </style>
+.row {
+  display: flex;
+  margin-bottom: .8rem;
+}
+
+.year {
+  width: 60px;
+  color: #777;
+}
+
+.title {
+  flex: 1;
+}
+
+</style>
 </head>
 
 <body>
 
-  <!-- =========================
-       PUENTE
-       - Lleva a Bandcamp
-       ========================= -->
-  <a 
-    class="bridge"
-    href="https://pedroacevedo.bandcamp.com/"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    <img
-      src="assets/Bridge_variation1.png"
-      alt="Puente en el bosque"
-    >
+<!-- =========================
+     HOME
+     ========================= -->
+
+<section class="hero">
+
+  <a class="bridge"
+     href="https://pedroacevedo.bandcamp.com/"
+     target="_blank">
+    <img src="assets/Bridge_variation1.png"
+         alt="Puente en el bosque">
   </a>
 
-  <!-- =========================
-       IDENTIDAD PROFESIONAL
-       ========================= -->
   <div class="bio">
-    <strong>Pedro Acevedo</strong> — Compositor. Música original para cine, escena e instalaciones.
+    <strong>Pedro Acevedo</strong> — Compositor. Música original para cine.
   </div>
 
-  <!-- =========================
-       NAVEGACIÓN PROFESIONAL
-       ========================= -->
-  <nav>
-    <a href="cine.html">Cine</a>
-    <a href="escena.html">Escena</a>
-    <a href="instalaciones.html">Instalaciones</a>
-    <a href="premios.html">Premios</a>
-    <a href="discos.html">Discos</a>
-    <a href="contacto.html">Contacto</a>
-  </nav>
+</section>
 
-</body>
 
-</html>
+<!-- =========================
+     CINE
+     ========================= -->
+
+<section class="cine">
+
+  <h1>Cine</h1>
+
+  <h2>Largometrajes</h2>
+
+  <div class="row">
+    <div class="year">2025</div>
+    <div class="title">Valle blanco, gallo negro — Dir. Álex Galán</div>
+  </div>
+
+  <div class="row">
+    <div class="year">2024</div>
+    <div class="title">Pico Sacro — Dir. Alberto Lobelle</div>
+  </div>
+
+  <div class="row">
+    <div class="year">2021</div>
+    <div class="title">Salvajes, el cuento del lobo — Dir. Álex Galán</div>
+  </div>
+
+  <h2>Mediometrajes</h2>
+
+  <div class="row">
+    <div class="year">2023</div>
+    <div class="title">Les Praeres — Dir. Iván Menéndez</div>
+  </div>
+
+  <div class="row">
+    <div class="year">2015</div>
+    <div class="title">The River — Dir. David Rodríguez Muñiz</div>
+  </div>
+
+  <h2>Cortometrajes</h2>
+
+  <div class="row">
+    <div class="year">2024</div>
+    <div class="title">Otro tono de azul — Dir. David Rodríguez Muñiz</div>
+  </div>
+
+  <div class="row">
+    <div class
