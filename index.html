@@ -5,9 +5,13 @@
 <meta charset="utf-8">
 <title>Pedro Acevedo — Compositor</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Pedro Acevedo — Compositor de música original para cine. Filmografía completa.">
+<meta name="description" content="Pedro Acevedo — Compositor de música original para cine, escena e instalaciones.">
 
 <style>
+
+/* =========================
+   RESET
+   ========================= */
 
 html, body {
   margin: 0;
@@ -22,7 +26,7 @@ body {
 }
 
 /* =========================
-   SECCIÓN HOME
+   HOME
    ========================= */
 
 .hero {
@@ -54,24 +58,45 @@ a.bridge:hover img {
 }
 
 /* =========================
-   SECCIÓN CINE
+   NAVEGACIÓN
    ========================= */
 
-.cine {
+nav {
+  margin-top: 3rem;
+  font-size: .85rem;
+  letter-spacing: .08em;
+}
+
+nav a {
+  text-decoration: none;
+  color: #111;
+  margin: 0 1rem;
+  cursor: pointer;
+}
+
+nav a:hover {
+  opacity: .6;
+}
+
+/* =========================
+   SECCIONES GENERALES
+   ========================= */
+
+section {
   max-width: 900px;
-  margin: 8vh auto;
+  margin: 10vh auto;
   padding: 0 8vw;
   text-align: left;
   line-height: 1.6;
 }
 
-.cine h1 {
+section h1 {
   text-align: center;
   font-weight: normal;
   margin-bottom: 4rem;
 }
 
-.cine h2 {
+section h2 {
   font-weight: normal;
   text-transform: uppercase;
   font-size: .9rem;
@@ -79,6 +104,10 @@ a.bridge:hover img {
   margin-top: 4rem;
   margin-bottom: 1.5rem;
 }
+
+/* =========================
+   FILAS CINE
+   ========================= */
 
 .row {
   display: flex;
@@ -92,6 +121,16 @@ a.bridge:hover img {
 
 .title {
   flex: 1;
+}
+
+/* =========================
+   SECCIONES VACÍAS
+   ========================= */
+
+.placeholder {
+  text-align: center;
+  color: #777;
+  font-style: italic;
 }
 
 </style>
@@ -113,8 +152,17 @@ a.bridge:hover img {
   </a>
 
   <div class="bio">
-    <strong>Pedro Acevedo</strong> — Compositor. Música original para cine.
+    <strong>Pedro Acevedo</strong> — Compositor. Música original para cine, escena e instalaciones.
   </div>
+
+  <nav>
+    <a href="#cine">Cine</a>
+    <a href="#escena">Escena</a>
+    <a href="#instalaciones">Instalaciones</a>
+    <a href="#premios">Premios</a>
+    <a href="#discos">Discos</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
 
 </section>
 
@@ -123,7 +171,7 @@ a.bridge:hover img {
      CINE
      ========================= -->
 
-<section class="cine">
+<section id="cine">
 
   <h1>Cine</h1>
 
@@ -164,4 +212,56 @@ a.bridge:hover img {
   </div>
 
   <div class="row">
-    <div class
+    <div class="year">2021</div>
+    <div class="title">Nyami Nyami — Dir. David Rodríguez Muñiz</div>
+  </div>
+
+  <div class="row">
+    <div class="year">2019</div>
+    <div class="title">Beyond the Glacier — Dir. David Rodríguez Muñiz</div>
+  </div>
+
+  <div class="row">
+    <div class="year">2017</div>
+    <div class="title">Refugiados — Dir. David Rodríguez Muñiz</div>
+  </div>
+
+  <div class="row">
+    <div class="year">2016</div>
+    <div class="title">Monstruo — Dir. David Rodríguez Muñiz</div>
+  </div>
+
+</section>
+
+
+<!-- =========================
+     RESTO DE SECCIONES
+     ========================= -->
+
+<section id="escena">
+  <h1>Escena</h1>
+  <div class="placeholder">En construcción</div>
+</section>
+
+<section id="instalaciones">
+  <h1>Instalaciones</h1>
+  <div class="placeholder">En construcción</div>
+</section>
+
+<section id="premios">
+  <h1>Premios</h1>
+  <div class="placeholder">En construcción</div>
+</section>
+
+<section id="discos">
+  <h1>Discos</h1>
+  <div class="placeholder">En construcción</div>
+</section>
+
+<section id="contacto">
+  <h1>Contacto</h1>
+  <div class="placeholder">En construcción</div>
+</section>
+
+</body>
+</html>
