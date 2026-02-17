@@ -3,34 +3,32 @@
 
 <head>
   <!-- =========================
-       METADATOS BÁSICOS
+       METADATOS
        ========================= -->
   <meta charset="utf-8">
 
-  <!-- Título que aparece en Google -->
   <title>Pedro Acevedo — Compositor</title>
 
-  <!-- Responsive -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- Descripción SEO -->
-  <meta name="description" content="Pedro Acevedo — Compositor de música original para cine, teatro e instalaciones. Discos y proyectos audiovisuales contemporáneos.">
+  <meta name="description" content="Pedro Acevedo — Compositor de música original para cine, teatro e instalaciones. Archivo profesional y discografía.">
 
   <!-- =========================
-       ESTILOS (minimal)
+       ESTILOS
        ========================= -->
   <style>
 
-    /* RESET Y FONDO GENERAL */
+    /* RESET GENERAL */
     html, body {
       margin: 0;
       padding: 0;
       height: 100%;
       background: #ffffff;
       font-family: serif;
+      color: #111;
     }
 
-    /* CENTRADO GENERAL */
+    /* CENTRADO VERTICAL */
     body {
       display: flex;
       flex-direction: column;
@@ -38,11 +36,11 @@
       justify-content: center;
       padding: 4vh 6vw;
       box-sizing: border-box;
+      text-align: center;
     }
 
     /* =========================
-       PUENTE (imagen principal)
-       - Es el acceso a Bandcamp
+       PUENTE (IMAGEN PRINCIPAL)
        ========================= */
     a.bridge {
       display: block;
@@ -51,7 +49,6 @@
       padding: 2rem;
       box-sizing: border-box;
       text-decoration: none;
-      cursor: pointer;
     }
 
     a.bridge img {
@@ -61,8 +58,6 @@
       object-position: center;
       display: block;
       border-radius: 6px;
-
-      /* leve respiración al pasar el cursor */
       transition: transform 0.6s ease;
     }
 
@@ -71,45 +66,14 @@
     }
 
     /* =========================
-       BIO / IDENTIDAD
+       BIO
        ========================= */
     .bio {
       margin-top: 1.5rem;
       font-size: 0.95rem;
-      color: #111;
-      text-align: center;
       max-width: 900px;
       line-height: 1.4;
     }
 
-  </style>
-</head>
-
-<body>
-
-  <!-- =========================
-       PUENTE
-       - Click lleva a Bandcamp
-       ========================= -->
-  <a 
-    class="bridge"
-    href="https://pedroacevedo.bandcamp.com/"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    <img
-      src="assets/Bridge_variation1.png"
-      alt="Puente en el bosque"
-    >
-  </a>
-
-  <!-- =========================
-       IDENTIDAD PROFESIONAL
-       ========================= -->
-  <div class="bio">
-    <strong>Pedro Acevedo</strong> — Compositor. Música original para cine, teatro e instalaciones.
-  </div>
-
-</body>
-
-</html>
+    /* =========================
+       NAVEGACIÓN
