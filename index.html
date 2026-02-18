@@ -17,9 +17,7 @@ html, body {
   color: #111;
 }
 
-/* =========================
-   HERO
-   ========================= */
+/* HERO */
 
 .hero {
   min-height: 85vh;
@@ -65,9 +63,7 @@ nav a:hover {
   opacity: .6;
 }
 
-/* =========================
-   SECCIONES
-   ========================= */
+/* SECCIONES */
 
 .content {
   display: none;
@@ -81,14 +77,11 @@ nav a:hover {
   display: block;
 }
 
-/* HERO desaparece cuando hay sección activa */
 body:has(.content:target) .hero {
   display: none;
 }
 
-/* =========================
-   TIPOGRAFÍA
-   ========================= */
+/* TIPOGRAFÍA */
 
 .content h1 {
   text-align: center;
@@ -119,6 +112,15 @@ body:has(.content:target) .hero {
 
 .subnav a:hover {
   opacity: .6;
+}
+
+h2 {
+  font-weight: normal;
+  text-transform: uppercase;
+  font-size: .8rem;
+  letter-spacing: .18em;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
 }
 
 .row {
@@ -157,9 +159,7 @@ body:has(.content:target) .hero {
 
 <body>
 
-<!-- =========================
-     HERO
-     ========================= -->
+<!-- HERO -->
 
 <section class="hero">
 
@@ -183,9 +183,7 @@ body:has(.content:target) .hero {
 
 </section>
 
-<!-- =========================
-     TRABAJOS
-     ========================= -->
+<!-- TRABAJOS -->
 
 <section id="trabajos" class="content">
 
@@ -207,87 +205,62 @@ body:has(.content:target) .hero {
 
 </section>
 
-<!-- =========================
-     CINE
-     ========================= -->
+<!-- CINE COMPLETO -->
 
 <section id="cine" class="content">
 
   <h1>Cine</h1>
 
+  <h2>Largometrajes</h2>
   <div class="row"><div class="year">2025</div><div class="title">Valle blanco, gallo negro — Dir. Álex Galán</div></div>
   <div class="row"><div class="year">2024</div><div class="title">Pico Sacro — Dir. Alberto Lobelle</div></div>
   <div class="row"><div class="year">2021</div><div class="title">Salvajes, el cuento del lobo — Dir. Álex Galán</div></div>
+
+  <h2>Mediometrajes</h2>
   <div class="row"><div class="year">2023</div><div class="title">Les Praeres — Dir. Iván Menéndez</div></div>
   <div class="row"><div class="year">2015</div><div class="title">The River — Dir. David Rodríguez Muñiz</div></div>
 
+  <h2>Cortometrajes</h2>
+  <div class="row"><div class="year">2024</div><div class="title">Otro tono de azul — Dir. David Rodríguez Muñiz</div></div>
+  <div class="row"><div class="year">2021</div><div class="title">Nyami Nyami — Dir. David Rodríguez Muñiz</div></div>
+  <div class="row"><div class="year">2019</div><div class="title">Beyond the Glacier — Dir. David Rodríguez Muñiz</div></div>
+  <div class="row"><div class="year">2017</div><div class="title">Refugiados — Dir. David Rodríguez Muñiz</div></div>
+  <div class="row"><div class="year">2016</div><div class="title">Monstruo — Dir. David Rodríguez Muñiz</div></div>
+
   <div class="back"><a href="#trabajos">← Trabajos</a></div>
 
 </section>
 
-<!-- =========================
-     ESCENA
-     ========================= -->
+<!-- RESTO SECCIONES -->
 
 <section id="escena" class="content">
-
   <h1>Escena</h1>
   <div class="placeholder">Contenido en desarrollo.</div>
-
   <div class="back"><a href="#trabajos">← Trabajos</a></div>
-
 </section>
-
-<!-- =========================
-     INSTALACIONES
-     ========================= -->
 
 <section id="instalaciones" class="content">
-
   <h1>Instalaciones</h1>
   <div class="placeholder">Contenido en desarrollo.</div>
-
   <div class="back"><a href="#trabajos">← Trabajos</a></div>
-
 </section>
-
-<!-- =========================
-     DISCOS
-     ========================= -->
 
 <section id="discos" class="content">
-
   <h1>Discos</h1>
   <div class="placeholder">Discografía disponible en Bandcamp.</div>
-
   <div class="back"><a href="#">← Inicio</a></div>
-
 </section>
-
-<!-- =========================
-     PREMIOS
-     ========================= -->
 
 <section id="premios" class="content">
-
   <h1>Premios</h1>
   <div class="placeholder">Listado de premios y nominaciones próximamente.</div>
-
   <div class="back"><a href="#">← Inicio</a></div>
-
 </section>
 
-<!-- =========================
-     CONTACTO
-     ========================= -->
-
 <section id="contacto" class="content">
-
   <h1>Contacto</h1>
   <div class="placeholder">Contacto profesional próximamente.</div>
-
   <div class="back"><a href="#">← Inicio</a></div>
-
 </section>
 
 </body>
