@@ -42,6 +42,11 @@ html, body {
   height: 50vh;
   object-fit: cover;
   border-radius: 6px;
+  transition: transform .6s ease;
+}
+
+.bridge:hover img {
+  transform: scale(1.01);
 }
 
 .bio {
@@ -83,6 +88,7 @@ html, body {
   display: block;
 }
 
+/* Hero desaparece cuando hay sección activa */
 body:has(.section:target) .hero {
   display: none;
 }
@@ -96,7 +102,7 @@ body:has(.section:target) .hero {
   margin-bottom: 3rem;
 }
 
-/* BLOQUES INTERNOS */
+/* BLOQUES */
 
 .block {
   margin-bottom: 3rem;
@@ -124,7 +130,20 @@ body:has(.section:target) .hero {
   flex: 1;
 }
 
-/* PIE */
+/* VOLVER */
+
+.back {
+  text-align: center;
+  margin-top: 4rem;
+  font-size: .85rem;
+}
+
+.back a {
+  text-decoration: none;
+  color: #111;
+}
+
+/* FOOTER */
 
 .footer {
   margin-top: 6rem;
@@ -143,19 +162,6 @@ body:has(.section:target) .hero {
   color: #111;
 }
 
-/* BOTÓN VOLVER */
-
-.back {
-  text-align: center;
-  margin-top: 4rem;
-  font-size: .85rem;
-}
-
-.back a {
-  text-decoration: none;
-  color: #111;
-}
-
 </style>
 </head>
 
@@ -167,7 +173,11 @@ body:has(.section:target) .hero {
 
 <section class="hero">
 
-  <a class="bridge" href="#">
+  <!-- CLICK EN EL PUENTE → BANDCAMP (NUEVA PESTAÑA) -->
+  <a class="bridge"
+     href="https://pedroacevedo.bandcamp.com/"
+     target="_blank"
+     rel="noopener">
     <img src="assets/Bridge_variation1.png"
          alt="Puente en el bosque">
   </a>
@@ -208,13 +218,11 @@ body:has(.section:target) .hero {
 
   <div class="block">
     <div class="block-title">Escena</div>
-
     <div class="row"><div class="year">2023</div><div class="details">La Caja (donde la realidad pierde sus límites)</div></div>
   </div>
 
   <div class="block">
     <div class="block-title">Instalaciones</div>
-
     <div class="row"><div class="year">2022</div><div class="details">Proyecto de instalación sonora</div></div>
   </div>
 
@@ -234,8 +242,14 @@ body:has(.section:target) .hero {
 
   <div class="block">
     <div class="block-title">Discografía</div>
-
-    <div class="row"><div class="details">Disponible en Bandcamp</div></div>
+    <div class="row">
+      <div class="details">
+        Disponible en 
+        <a href="https://pedroacevedo.bandcamp.com/" target="_blank" rel="noopener">
+          Bandcamp
+        </a>
+      </div>
+    </div>
   </div>
 
   <div class="back">
