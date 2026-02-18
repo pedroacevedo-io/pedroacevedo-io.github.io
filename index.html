@@ -4,185 +4,118 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Pedro Acevedo — Música y composición para imagen y escena</title>
+<title>Trabajos | Pedro Acevedo</title>
+<meta name="description" content="Música original para cine, teatro e instalaciones de Pedro Acevedo.">
 
 <style>
 body{
   margin:0;
+  background:#f5f5f3;
   font-family: Georgia, serif;
-  background:#f5f5f5;
   color:#111;
-  text-align:center;
 }
 
-/* HEADER FIJO */
 header{
   position:fixed;
   top:0;
-  left:0;
   width:100%;
-  background:#ffffff;
+  background:#f5f5f3;
+  padding:14px 0;
   border-bottom:1px solid #ddd;
-  padding:12px 0;
+  text-align:center;
   font-size:14px;
   letter-spacing:1px;
   z-index:1000;
 }
 
-.spacer{
-  height:60px;
+main{
+  max-width:820px;
+  margin:120px auto 100px;
+  padding:0 20px;
 }
 
-/* HERO */
-.hero{
-  max-width:1100px;
-  margin:0 auto 60px auto;
-}
-
-.hero img{
-  width:100%;
-  aspect-ratio: 16 / 9;
-  object-fit: cover;
-  display:block;
-  border-radius:6px;
-}
-
-
-/* TEXTOS */
 h1{
+  text-align:center;
+  font-size:30px;
   font-weight:normal;
-  margin:40px 0 10px 0;
+  margin-bottom:70px;
 }
 
-.subtitle{
-  font-size:14px;
-  margin-bottom:40px;
+section{
+  margin-bottom:60px;
 }
 
-/* LINKS BAJO IMAGEN */
-.hero-link{
-  display:block;
-  margin:15px 0 60px 0;
+h2{
   font-size:13px;
-  letter-spacing:1px;
-  text-decoration:none;
-  color:#000;
-}
-
-.hero-link:hover{
-  opacity:0.6;
-}
-
-/* TRABAJOS */
-#trabajos{
-  display:none;
-  max-width:900px;
-  margin:0 auto 100px auto;
-  text-align:left;
-}
-
-#trabajos:target{
-  display:block;
-}
-
-#trabajos:target ~ .hero{
-  display:none;
-}
-
-.section-title{
-  margin:60px 0 30px 0;
   letter-spacing:2px;
-  font-size:12px;
+  margin-bottom:25px;
+  font-weight:normal;
 }
 
 .work{
-  margin-bottom:14px;
+  display:flex;
+  margin-bottom:16px;
+  font-size:15px;
 }
 
 .year{
-  display:inline-block;
   width:60px;
-  color:#777;
+  color:#666;
 }
 
-/* BOTÓN VOLVER */
-.volver{
-  display:block;
-  margin:80px auto 0 auto;
+.back{
   text-align:center;
+  margin-top:80px;
+  font-size:14px;
+}
+
+a{
+  color:#111;
   text-decoration:none;
-  color:#000;
-  font-size:13px;
-  letter-spacing:1px;
 }
-
-.volver:hover{
-  opacity:0.6;
-}
-
 </style>
 </head>
 
 <body>
 
 <header>
-  Pedro Acevedo
+Pedro Acevedo
 </header>
 
-<div class="spacer"></div>
+<main>
 
-<h1>Música y composición para imagen y escena</h1>
-<div class="subtitle">
-  Músico y compositor - Trabajo con sonido, voz e instrumentos para discos, cine y escena.
+<h1>Música para imagen y escena</h1>
+
+<section>
+<h2>CINE · MÚSICA ORIGINAL</h2>
+
+<div class="work"><div class="year">2025</div>Valle blanco, gallo negro — Dir. Álex Galán</div>
+<div class="work"><div class="year">2024</div>Pico Sacro — Dir. Alberto Lobelle</div>
+<div class="work"><div class="year">2024</div>Otro tono de azul — Dir. David Rodríguez Muñiz</div>
+<div class="work"><div class="year">2023</div>Les Praeres — Dir. Iván Menéndez</div>
+<div class="work"><div class="year">2021</div>Salvajes, el cuento del lobo — Dir. Álex Galán</div>
+<div class="work"><div class="year">2021</div>Nyami Nyami — Dir. David Rodríguez Muñiz</div>
+<div class="work"><div class="year">2019</div>Beyond the Glacier — Dir. David Rodríguez Muñiz</div>
+<div class="work"><div class="year">2017</div>Refugiados — Dir. David Rodríguez Muñiz</div>
+<div class="work"><div class="year">2016</div>Monstruo — Dir. David Rodríguez Muñiz</div>
+<div class="work"><div class="year">2015</div>The River — Dir. David Rodríguez Muñiz</div>
+</section>
+
+<section>
+<h2>ESCENA</h2>
+<div class="work"><div class="year">2023</div>La Caja (donde la realidad pierde sus límites)</div>
+</section>
+
+<section>
+<h2>INSTALACIONES</h2>
+<div class="work"><div class="year">2022</div>Proyecto de instalación sonora</div>
+</section>
+
+<div class="back">
+<a href="index.html">Volver</a>
 </div>
 
-<div class="hero">
-
-  <!-- PUENTE -->
-  <a href="https://pedroacevedo.bandcamp.com" target="_blank">
-    <img src="assets/bridge.jpg" alt="Discografía Pedro Acevedo">
-  </a>
-  <a class="hero-link" href="https://pedroacevedo.bandcamp.com" target="_blank">
-    Discografía · Escuchar en Bandcamp
-  </a>
-
-  <!-- CONTRALUZ -->
-  <a href="#trabajos">
-    <img src="assets/contraluzwebpedracevedo.jpg" alt="Trabajos Pedro Acevedo">
-  </a>
-  <a class="hero-link" href="#trabajos">
-    Trabajos · Música para cine, teatro e instalaciones
-  </a>
-
-</div>
-
-<!-- TRABAJOS -->
-<div id="trabajos">
-
-  <h2>Música para imagen y escena</h2>
-
-  <div class="section-title">CINE · MÚSICA ORIGINAL</div>
-
-  <div class="work"><span class="year">2025</span>Valle blanco, gallo negro — Dir. Álex Galán</div>
-  <div class="work"><span class="year">2024</span>Pico Sacro — Dir. Alberto Lobelle</div>
-  <div class="work"><span class="year">2024</span>Otro tono de azul — Dir. David Rodríguez Muñiz</div>
-  <div class="work"><span class="year">2023</span>Les Praeres — Dir. Iván Menéndez</div>
-  <div class="work"><span class="year">2021</span>Salvajes, el cuento del lobo — Dir. Álex Galán</div>
-  <div class="work"><span class="year">2021</span>Nyami Nyami — Dir. David Rodríguez Muñiz</div>
-  <div class="work"><span class="year">2019</span>Beyond the Glacier — Dir. David Rodríguez Muñiz</div>
-  <div class="work"><span class="year">2017</span>Refugiados — Dir. David Rodríguez Muñiz</div>
-  <div class="work"><span class="year">2016</span>Monstruo — Dir. David Rodríguez Muñiz</div>
-  <div class="work"><span class="year">2015</span>The River — Dir. David Rodríguez Muñiz</div>
-
-  <div class="section-title">ESCENA</div>
-  <div class="work"><span class="year">2023</span>La Caja (donde la realidad pierde sus límites)</div>
-
-  <div class="section-title">INSTALACIONES</div>
-  <div class="work"><span class="year">2022</span>Proyecto de instalación sonora</div>
-
-  <a class="volver" href="#">Volver</a>
-
-</div>
+</main>
 
 </body>
 </html>
