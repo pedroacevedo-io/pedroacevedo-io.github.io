@@ -23,15 +23,17 @@ body{
 header{
   position:fixed;
   top:0;
-  width:100%;
+  left:0;
+  right:0;
   background:#f5f5f3;
   border-bottom:1px solid #ddd;
-  padding:14px 30px;
+  padding:14px 40px;   /* más aire lateral */
   font-size:12px;
   letter-spacing:0.12em;
   z-index:1000;
   display:flex;
-  justify-content:flex-end;   /* ← SOLO ESTO lo mueve a la derecha */
+  justify-content:flex-end;
+  box-sizing:border-box; /* evita desbordes */
 }
 
 /* Contenido */
