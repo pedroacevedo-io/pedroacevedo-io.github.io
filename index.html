@@ -3,11 +3,15 @@
 <head>
 
 <meta charset="utf-8">
-<title>Pedro Acevedo — Músico y compositor</title>
+<title>Pedro Acevedo — Compositor</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Pedro Acevedo — Músico y compositor. Trabajo con sonido, voz e instrumentos para discos, cine y escena.">
+<meta name="description" content="Pedro Acevedo — Músico y compositor. Música original para cine, teatro, instalaciones y discos.">
 
 <style>
+
+/* =========================
+   RESET
+========================= */
 
 html, body {
   margin: 0;
@@ -15,151 +19,121 @@ html, body {
   font-family: serif;
   background: #ffffff;
   color: #111;
+  scroll-behavior: smooth;
 }
 
 /* =========================
-   HERO — EL PUENTE
-   ========================= */
+   HERO
+========================= */
 
 .hero {
-  min-height: 90vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding: 4vh 6vw;
   text-align: center;
-  padding: 0 6vw;
+  transition: opacity 0.4s ease;
 }
 
-.bridge {
-  display: block;
-  max-width: 1000px;
-  width: 100%;
-}
-
-.bridge img {
-  width: 100%;
-  height: 50vh;
-  object-fit: cover;
-  border-radius: 6px;
-  transition: transform .6s ease;
-}
-
-.bridge:hover img {
-  transform: scale(1.01);
-}
-
-.bio {
-  margin-top: 1.2rem;
-  font-size: .95rem;
-}
-
-/* DIRECCIONES */
-
-.directions {
-  margin-top: 3rem;
-  font-size: .95rem;
-  letter-spacing: .08em;
-}
-
-.directions a {
-  text-decoration: none;
-  color: #111;
-  margin: 0 1.5rem;
-}
-
-.directions a:hover {
-  opacity: .6;
+/* Ocultar hero cuando se abre sección */
+body:has(:target) .hero {
+  opacity: 0;
+  pointer-events: none;
+  height: 0;
+  overflow: hidden;
 }
 
 /* =========================
-   SECCIONES
-   ========================= */
+   TEXTO IDENTIDAD
+========================= */
 
-.section {
-  display: none;
-  max-width: 760px;
-  margin: 6vh auto 10vh auto;
+.identity {
+  max-width: 900px;
+  line-height: 1.5;
+  font-size: 1rem;
+}
+
+.identity strong {
+  font-weight: bold;
+}
+
+/* =========================
+   IMÁGENES PRINCIPALES
+========================= */
+
+.main-image {
+  width: 100%;
+  max-width: 1100px;
+  height: 48vh;
+  object-fit: cover;
+  border-radius: 6px;
+  display: block;
+  margin: 2.5rem auto 0 auto;
+  transition: transform 0.6s ease;
+}
+
+.main-image:hover {
+  transform: scale(1.01);
+}
+
+/* =========================
+   TEXTOS DE SECCIÓN
+========================= */
+
+.section-link {
+  margin-top: 0.8rem;
+  font-size: 0.9rem;
+  letter-spacing: 0.05em;
+}
+
+/* =========================
+   SECCIÓN TRABAJOS
+========================= */
+
+section {
+  max-width: 900px;
+  margin: 6vh auto;
   padding: 0 6vw;
   line-height: 1.6;
 }
 
-.section:target {
-  display: block;
-}
-
-/* Hero desaparece cuando hay sección activa */
-body:has(.section:target) .hero {
-  display: none;
-}
-
-/* TITULOS */
-
-.section h1 {
-  text-align: center;
+h1 {
   font-weight: normal;
-  font-size: 1.6rem;
+  text-align: center;
   margin-bottom: 3rem;
 }
 
-/* BLOQUES */
-
-.block {
-  margin-bottom: 3rem;
-}
-
-.block-title {
-  font-size: .8rem;
+h2 {
+  font-weight: normal;
   text-transform: uppercase;
-  letter-spacing: .18em;
+  font-size: 0.8rem;
+  letter-spacing: 0.18em;
+  margin-top: 3rem;
   margin-bottom: 1rem;
-  color: #333;
 }
 
 .row {
   display: flex;
-  margin-bottom: .6rem;
+  margin-bottom: 0.7rem;
 }
 
 .year {
   width: 70px;
-  color: #aaa;
+  color: #888;
 }
 
-.details {
+.title {
   flex: 1;
+  font-size: 0.95rem;
 }
 
-/* VOLVER */
-
-.back {
-  text-align: center;
-  margin-top: 4rem;
-  font-size: .85rem;
-}
-
-.back a {
-  text-decoration: none;
-  color: #111;
-}
-
-/* FOOTER */
-
-.footer {
-  margin-top: 6rem;
-  text-align: center;
-  font-size: .85rem;
-  color: #666;
-}
-
-.footer a {
-  text-decoration: none;
-  color: #666;
-  margin: 0 .8rem;
-}
-
-.footer a:hover {
-  color: #111;
+.role {
+  font-size: 0.85rem;
+  color: #777;
+  margin-left: 70px;
+  margin-bottom: 0.8rem;
 }
 
 </style>
@@ -168,104 +142,133 @@ body:has(.section:target) .hero {
 <body>
 
 <!-- =========================
-     PUENTE
-     ========================= -->
+     HERO
+========================= -->
 
-<section class="hero">
+<div class="hero">
 
-  <!-- CLICK EN EL PUENTE → BANDCAMP (NUEVA PESTAÑA) -->
-  <a class="bridge"
-     href="https://pedroacevedo.bandcamp.com/"
+  <div class="identity">
+    <strong>Pedro Acevedo — Músico y compositor.</strong><br>
+    Trabajo con sonido, voz e instrumentos para discos, cine, teatro e instalaciones.
+  </div>
+
+  <!-- PUENTE -->
+  <a href="https://pedroacevedo.bandcamp.com/"
      target="_blank"
      rel="noopener">
     <img src="assets/Bridge_variation1.png"
-         alt="Puente en el bosque">
+         class="main-image"
+         alt="Pedro Acevedo — Discografía y música publicada">
   </a>
 
-  <div class="bio">
-    <strong>Pedro Acevedo</strong> — Músico y compositor. Trabajo con sonido, voz e instrumentos para discos, cine y escena.
+  <div class="section-link">
+    Discografía · Escuchar en Bandcamp
   </div>
 
-  <div class="directions">
-    <a href="#aplicada">Obra aplicada</a>
-    <a href="#sonora">Obra sonora</a>
+  <!-- CONTRALUZ -->
+  <a href="#trabajos">
+    <img src="assets/contraluzwebpedracevedo.jpg"
+         class="main-image"
+         alt="Pedro Acevedo — Música para cine, teatro e instalaciones">
+  </a>
+
+  <div class="section-link">
+    Trabajos · Música para cine, teatro e instalaciones
   </div>
 
-</section>
-
-<!-- =========================
-     OBRA APLICADA
-     ========================= -->
-
-<section id="aplicada" class="section">
-
-  <h1>Obra aplicada</h1>
-
-  <div class="block">
-    <div class="block-title">Cine</div>
-
-    <div class="row"><div class="year">2025</div><div class="details">Valle blanco, gallo negro — Dir. Álex Galán</div></div>
-    <div class="row"><div class="year">2024</div><div class="details">Pico Sacro — Dir. Alberto Lobelle</div></div>
-    <div class="row"><div class="year">2023</div><div class="details">Les Praeres — Dir. Iván Menéndez</div></div>
-    <div class="row"><div class="year">2021</div><div class="details">Salvajes, el cuento del lobo — Dir. Álex Galán</div></div>
-    <div class="row"><div class="year">2019</div><div class="details">Beyond the Glacier — Dir. David Rodríguez Muñiz</div></div>
-    <div class="row"><div class="year">2017</div><div class="details">Refugiados — Dir. David Rodríguez Muñiz</div></div>
-    <div class="row"><div class="year">2016</div><div class="details">Monstruo — Dir. David Rodríguez Muñiz</div></div>
-    <div class="row"><div class="year">2015</div><div class="details">The River — Dir. David Rodríguez Muñiz</div></div>
-    <div class="row"><div class="year">2024</div><div class="details">Otro tono de azul — Dir. David Rodríguez Muñiz</div></div>
-    <div class="row"><div class="year">2021</div><div class="details">Nyami Nyami — Dir. David Rodríguez Muñiz</div></div>
-  </div>
-
-  <div class="block">
-    <div class="block-title">Escena</div>
-    <div class="row"><div class="year">2023</div><div class="details">La Caja (donde la realidad pierde sus límites)</div></div>
-  </div>
-
-  <div class="block">
-    <div class="block-title">Instalaciones</div>
-    <div class="row"><div class="year">2022</div><div class="details">Proyecto de instalación sonora</div></div>
-  </div>
-
-  <div class="back">
-    <a href="#">← Volver al puente</a>
-  </div>
-
-</section>
-
-<!-- =========================
-     OBRA SONORA
-     ========================= -->
-
-<section id="sonora" class="section">
-
-  <h1>Obra sonora</h1>
-
-  <div class="block">
-    <div class="block-title">Discografía</div>
-    <div class="row">
-      <div class="details">
-        Disponible en 
-        <a href="https://pedroacevedo.bandcamp.com/" target="_blank" rel="noopener">
-          Bandcamp
-        </a>
-      </div>
-    </div>
-  </div>
-
-  <div class="back">
-    <a href="#">← Volver al puente</a>
-  </div>
-
-</section>
-
-<!-- =========================
-     PIE DISCRETO
-     ========================= -->
-
-<div class="footer">
-  <a href="#premios">Premios</a>
-  <a href="#contacto">Contacto</a>
 </div>
+
+<!-- =========================
+     TRABAJOS
+========================= -->
+
+<section id="trabajos">
+
+<h1>Música para imagen y escena</h1>
+
+<h2>Cine</h2>
+
+<div class="row">
+  <div class="year">2025</div>
+  <div class="title">Valle blanco, gallo negro — Dir. Álex Galán</div>
+</div>
+<div class="role">Música original</div>
+
+<div class="row">
+  <div class="year">2024</div>
+  <div class="title">Pico Sacro — Dir. Alberto Lobelle</div>
+</div>
+<div class="role">Música original</div>
+
+<div class="row">
+  <div class="year">2021</div>
+  <div class="title">Salvajes, el cuento del lobo — Dir. Álex Galán</div>
+</div>
+<div class="role">Música original</div>
+
+<h2>Mediometrajes</h2>
+
+<div class="row">
+  <div class="year">2023</div>
+  <div class="title">Les Praeres — Dir. Iván Menéndez</div>
+</div>
+<div class="role">Música original</div>
+
+<div class="row">
+  <div class="year">2015</div>
+  <div class="title">The River — Dir. David Rodríguez Muñiz</div>
+</div>
+<div class="role">Música original</div>
+
+<h2>Cortometrajes</h2>
+
+<div class="row">
+  <div class="year">2024</div>
+  <div class="title">Otro tono de azul — Dir. David Rodríguez Muñiz</div>
+</div>
+<div class="role">Música original</div>
+
+<div class="row">
+  <div class="year">2021</div>
+  <div class="title">Nyami Nyami — Dir. David Rodríguez Muñiz</div>
+</div>
+<div class="role">Música original</div>
+
+<div class="row">
+  <div class="year">2019</div>
+  <div class="title">Beyond the Glacier — Dir. David Rodríguez Muñiz</div>
+</div>
+<div class="role">Música original</div>
+
+<div class="row">
+  <div class="year">2017</div>
+  <div class="title">Refugiados — Dir. David Rodríguez Muñiz</div>
+</div>
+<div class="role">Música original</div>
+
+<div class="row">
+  <div class="year">2016</div>
+  <div class="title">Monstruo — Dir. David Rodríguez Muñiz</div>
+</div>
+<div class="role">Música original</div>
+
+<h2>Escena</h2>
+
+<div class="row">
+  <div class="year">2023</div>
+  <div class="title">La Caja (donde la realidad pierde sus límites)</div>
+</div>
+<div class="role">Música original</div>
+
+<h2>Instalaciones</h2>
+
+<div class="row">
+  <div class="year">2022</div>
+  <div class="title">Proyecto de instalación sonora</div>
+</div>
+<div class="role">Composición e intervención sonora</div>
+
+</section>
 
 </body>
 </html>
