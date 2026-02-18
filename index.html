@@ -17,9 +17,7 @@ html, body {
   color: #111;
 }
 
-/* =========================
-   HERO
-   ========================= */
+/* HERO */
 
 .hero {
   min-height: 85vh;
@@ -65,14 +63,12 @@ nav a:hover {
   opacity: .6;
 }
 
-/* =========================
-   SECCIONES
-   ========================= */
+/* SECCIONES */
 
 .content {
   display: none;
   max-width: 760px;
-  margin: 4vh auto 8vh auto;
+  margin: 5vh auto 8vh auto;
   padding: 0 6vw;
   line-height: 1.6;
 }
@@ -81,76 +77,72 @@ nav a:hover {
   display: block;
 }
 
-/* Hero desaparece cuando hay sección activa */
 body:has(.content:target) .hero {
   display: none;
 }
 
-/* =========================
-   TITULOS
-   ========================= */
+/* TITULOS */
 
 .content h1 {
   text-align: center;
   font-weight: normal;
   font-size: 1.6rem;
-  margin-bottom: 1rem;
+  margin-bottom: 1.2rem;
 }
 
 .subtitle {
   text-align: center;
-  margin-bottom: 3rem;
+  margin-bottom: 4rem;
   color: #666;
   font-size: .95rem;
 }
 
-/* Categoría principal (Cine, Escena, Instalaciones) */
+/* DISCIPLINA */
 
-.category-main {
-  margin-top: 3rem;
-  margin-bottom: 1.5rem;
-  font-size: .9rem;
-  letter-spacing: .12em;
+.discipline {
+  margin-top: 4rem;
+  margin-bottom: .5rem;
+  font-size: .85rem;
+  letter-spacing: .18em;
   text-transform: uppercase;
-  color: #333;
 }
 
-/* Subcategorías (Largometrajes, etc.) */
-
-.category-sub {
-  margin-top: 2rem;
-  margin-bottom: .8rem;
-  font-size: .8rem;
-  letter-spacing: .05em;
+.role-discipline {
+  font-size: .85rem;
   color: #777;
+  margin-bottom: 2rem;
 }
 
-/* Filas */
+/* SUBFORMATO */
+
+.subtype {
+  margin-top: 2.5rem;
+  margin-bottom: .5rem;
+  font-size: .75rem;
+  color: #888;
+}
+
+/* FILAS */
 
 .row {
   display: flex;
-  margin-bottom: .7rem;
+  margin-bottom: .6rem;
 }
 
 .year {
   width: 70px;
-  color: #888;
+  color: #aaa;
 }
 
 .details {
   flex: 1;
 }
 
-.role {
-  color: #777;
-  font-size: .9rem;
-}
-
-/* Navegación inferior */
+/* BACK */
 
 .back {
   text-align: center;
-  margin-top: 3rem;
+  margin-top: 4rem;
   font-size: .85rem;
 }
 
@@ -169,10 +161,6 @@ body:has(.content:target) .hero {
 </head>
 
 <body>
-
-<!-- =========================
-     HERO
-     ========================= -->
 
 <section class="hero">
 
@@ -196,63 +184,56 @@ body:has(.content:target) .hero {
 
 </section>
 
-<!-- =========================
-     TRABAJOS
-     ========================= -->
-
 <section id="trabajos" class="content">
 
   <h1>Trabajos</h1>
 
   <div class="subtitle">
-    Proyectos en distintas disciplinas artísticas. Música original para imagen y escena.
+    Proyectos en distintas disciplinas artísticas.
   </div>
 
   <!-- CINE -->
 
-  <div class="category-main">Cine</div>
+  <div class="discipline">Cine</div>
+  <div class="role-discipline">Música original</div>
 
-  <div class="category-sub">Largometrajes</div>
+  <div class="subtype">Largometrajes</div>
 
-  <div class="row"><div class="year">2025</div><div class="details">Valle blanco, gallo negro — Dir. Álex Galán<div class="role">Música original</div></div></div>
-  <div class="row"><div class="year">2024</div><div class="details">Pico Sacro — Dir. Alberto Lobelle<div class="role">Música original</div></div></div>
-  <div class="row"><div class="year">2021</div><div class="details">Salvajes, el cuento del lobo — Dir. Álex Galán<div class="role">Música original</div></div></div>
+  <div class="row"><div class="year">2025</div><div class="details">Valle blanco, gallo negro — Dir. Álex Galán</div></div>
+  <div class="row"><div class="year">2024</div><div class="details">Pico Sacro — Dir. Alberto Lobelle</div></div>
+  <div class="row"><div class="year">2021</div><div class="details">Salvajes, el cuento del lobo — Dir. Álex Galán</div></div>
 
-  <div class="category-sub">Mediometrajes</div>
+  <div class="subtype">Mediometrajes</div>
 
-  <div class="row"><div class="year">2023</div><div class="details">Les Praeres — Dir. Iván Menéndez<div class="role">Música original</div></div></div>
-  <div class="row"><div class="year">2015</div><div class="details">The River — Dir. David Rodríguez Muñiz<div class="role">Música original</div></div></div>
+  <div class="row"><div class="year">2023</div><div class="details">Les Praeres — Dir. Iván Menéndez</div></div>
+  <div class="row"><div class="year">2015</div><div class="details">The River — Dir. David Rodríguez Muñiz</div></div>
 
-  <div class="category-sub">Cortometrajes</div>
+  <div class="subtype">Cortometrajes</div>
 
-  <div class="row"><div class="year">2024</div><div class="details">Otro tono de azul — Dir. David Rodríguez Muñiz<div class="role">Música original</div></div></div>
-  <div class="row"><div class="year">2021</div><div class="details">Nyami Nyami — Dir. David Rodríguez Muñiz<div class="role">Música original</div></div></div>
-  <div class="row"><div class="year">2019</div><div class="details">Beyond the Glacier — Dir. David Rodríguez Muñiz<div class="role">Música original</div></div></div>
-  <div class="row"><div class="year">2017</div><div class="details">Refugiados — Dir. David Rodríguez Muñiz<div class="role">Música original</div></div></div>
-  <div class="row"><div class="year">2016</div><div class="details">Monstruo — Dir. David Rodríguez Muñiz<div class="role">Música original</div></div></div>
+  <div class="row"><div class="year">2024</div><div class="details">Otro tono de azul — Dir. David Rodríguez Muñiz</div></div>
+  <div class="row"><div class="year">2021</div><div class="details">Nyami Nyami — Dir. David Rodríguez Muñiz</div></div>
+  <div class="row"><div class="year">2019</div><div class="details">Beyond the Glacier — Dir. David Rodríguez Muñiz</div></div>
+  <div class="row"><div class="year">2017</div><div class="details">Refugiados — Dir. David Rodríguez Muñiz</div></div>
+  <div class="row"><div class="year">2016</div><div class="details">Monstruo — Dir. David Rodríguez Muñiz</div></div>
 
   <!-- ESCENA -->
 
-  <div class="category-main">Escena</div>
+  <div class="discipline">Escena</div>
+  <div class="role-discipline">Música original</div>
 
   <div class="row">
     <div class="year">2023</div>
-    <div class="details">
-      La Caja (donde la realidad pierde sus límites)
-      <div class="role">Música original</div>
-    </div>
+    <div class="details">La Caja (donde la realidad pierde sus límites)</div>
   </div>
 
   <!-- INSTALACIONES -->
 
-  <div class="category-main">Instalaciones</div>
+  <div class="discipline">Instalaciones</div>
+  <div class="role-discipline">Composición e intervención sonora</div>
 
   <div class="row">
     <div class="year">2022</div>
-    <div class="details">
-      Proyecto de instalación sonora
-      <div class="role">Composición e intervención sonora</div>
-    </div>
+    <div class="details">Proyecto de instalación sonora</div>
   </div>
 
   <div class="back">
@@ -261,29 +242,17 @@ body:has(.content:target) .hero {
 
 </section>
 
-<!-- =========================
-     DISCOS
-     ========================= -->
-
 <section id="discos" class="content">
   <h1>Discos</h1>
   <div class="placeholder">Discografía disponible en Bandcamp.</div>
   <div class="back"><a href="#">← Inicio</a></div>
 </section>
 
-<!-- =========================
-     PREMIOS
-     ========================= -->
-
 <section id="premios" class="content">
   <h1>Premios</h1>
-  <div class="placeholder">Listado de premios y nominaciones próximamente.</div>
+  <div class="placeholder">Listado próximamente.</div>
   <div class="back"><a href="#">← Inicio</a></div>
 </section>
-
-<!-- =========================
-     CONTACTO
-     ========================= -->
 
 <section id="contacto" class="content">
   <h1>Contacto</h1>
