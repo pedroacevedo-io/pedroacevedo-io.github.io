@@ -21,29 +21,29 @@ html, body {
 .wrapper {
   max-width: 1000px;
   margin: 0 auto;
-  padding: 4rem 2rem 6rem;
+  padding: 6rem 2rem 8rem;
   text-align: center;
 }
 
 /* HERO */
 
 .hero {
-  transition: opacity .6s ease, transform .6s ease;
+  transition: opacity .6s ease;
 }
 
 h1 {
   font-weight: normal;
   font-size: 1.6rem;
-  margin-bottom: .5rem;
+  margin-bottom: .6rem;
 }
 
 .subtitle {
   font-size: 1rem;
-  margin-bottom: 3rem;
+  margin-bottom: 3.5rem;
 }
 
 .image-block {
-  margin-bottom: 3.5rem;
+  margin-bottom: 4rem;
 }
 
 .image-block img {
@@ -61,11 +61,11 @@ h1 {
   font-size: .9rem;
 }
 
-/* SECCIÓN TRABAJOS */
+/* SECCIÓN */
 
 .section {
   display: none;
-  margin-top: 2rem;
+  margin-top: 1rem;
   text-align: left;
 }
 
@@ -79,33 +79,19 @@ body:has(.section:target) .hero {
   display: none;
 }
 
-/* BOTÓN VOLVER */
-
-.back {
-  display: inline-block;
-  margin-bottom: 2.5rem;
-  font-size: .9rem;
-  text-decoration: none;
-  color: #111;
-}
-
-.back:hover {
-  opacity: .6;
-}
-
 /* TÍTULO */
 
 .section h2 {
   text-align: center;
   font-weight: normal;
   font-size: 1.8rem;
-  margin-bottom: 4rem;
+  margin-bottom: 3rem;
 }
 
 /* DISCIPLINAS */
 
 .discipline {
-  margin-bottom: 4rem;
+  margin-bottom: 3rem;
 }
 
 .discipline h3 {
@@ -113,11 +99,13 @@ body:has(.section:target) .hero {
   letter-spacing: .15em;
   font-size: .8rem;
   text-transform: uppercase;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.2rem;
 }
 
+/* OBRAS */
+
 .work {
-  margin-bottom: 1.6rem;
+  margin-bottom: 1.2rem;
 }
 
 .year {
@@ -130,7 +118,22 @@ body:has(.section:target) .hero {
   font-size: .85rem;
   color: #666;
   margin-left: 60px;
-  margin-top: .2rem;
+  margin-top: .1rem;
+}
+
+/* BOTÓN VOLVER (abajo) */
+
+.back {
+  display: block;
+  text-align: center;
+  margin-top: 4rem;
+  font-size: .9rem;
+  text-decoration: none;
+  color: #111;
+}
+
+.back:hover {
+  opacity: .6;
 }
 
 </style>
@@ -169,8 +172,6 @@ body:has(.section:target) .hero {
 
   <!-- TRABAJOS -->
   <div id="trabajos" class="section">
-
-    <a href="#" class="back">← Volver</a>
 
     <h2>Música para imagen y escena</h2>
 
@@ -261,6 +262,8 @@ body:has(.section:target) .hero {
         <div class="role">Composición e intervención sonora</div>
       </div>
     </div>
+
+    <a href="#" class="back">← Volver</a>
 
   </div>
 
