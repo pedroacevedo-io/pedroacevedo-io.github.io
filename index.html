@@ -4,9 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Pedro Acevedo | Músico y compositor para cine y escena</title>
-
-<meta name="description" content="Pedro Acevedo, músico y compositor. Trabajo con sonido, voz e instrumentos para discos, cine y escena.">
+<title>Pedro Acevedo | Discos y música original para cine y escena</title>
+<meta name="description" content="Pedro Acevedo. Discos y música original para cine y escena.">
 
 <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500&display=swap" rel="stylesheet">
 
@@ -19,22 +18,23 @@ body{
   text-align:center;
 }
 
-/* Header fijo */
 header{
   position:fixed;
   top:0;
   width:100%;
   background:#f5f5f3;
-  border-bottom:1px solid #ddd;
-  padding:14px 30px;
-  font-size:14px;
-  letter-spacing:0.12em;
+  border-bottom:1px solid #e2e2e2;
   z-index:1000;
-  display:flex;
-  justify-content:flex-end; /* A la derecha */
 }
 
-/* Menu clickable */
+.header-inner{
+  max-width:900px;
+  margin:0 auto;
+  padding:14px 20px;
+  display:flex;
+  justify-content:flex-end;
+}
+
 details{
   position:relative;
 }
@@ -42,14 +42,18 @@ details{
 summary{
   list-style:none;
   cursor:pointer;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:22px;
+  height:22px;
+  border:1px solid #111;
+  font-size:14px;
+  user-select:none;
 }
 
 summary::-webkit-details-marker{
   display:none;
-}
-
-summary:hover{
-  opacity:.6;
 }
 
 .menu-content{
@@ -57,19 +61,20 @@ summary:hover{
   right:0;
   top:40px;
   background:#f5f5f3;
-  border:1px solid #ddd;
-  padding:25px 35px;
+  border:1px solid #e2e2e2;
+  padding:28px 36px;
   display:flex;
   flex-direction:column;
-  gap:18px;
-  min-width:200px;
+  gap:20px;
+  min-width:220px;
+  text-align:left;
 }
 
 .menu-content a{
   text-decoration:none;
   color:#111;
-  font-size:15px;
-  letter-spacing:0.05em;
+  font-size:16px;
+  letter-spacing:0.04em;
 }
 
 .menu-content a:hover{
@@ -78,25 +83,21 @@ summary:hover{
 
 main{
   max-width:900px;
-  margin:140px auto 80px auto;
+  margin:160px auto 100px auto;
   padding:0 20px;
 }
 
 h1{
-  font-size:48px;
+  font-size:52px;
   font-weight:400;
-  margin-bottom:20px;
+  margin-bottom:30px;
 }
 
-.subtitle{
+.tagline{
   font-size:20px;
-  margin-bottom:20px;
-}
-
-.description{
-  font-size:18px;
   line-height:1.6;
-  margin-bottom:60px;
+  max-width:700px;
+  margin:0 auto 80px auto;
 }
 
 .bridge{
@@ -111,7 +112,7 @@ h1{
 }
 
 .caption{
-  margin-top:14px;
+  margin-top:16px;
   font-size:14px;
   letter-spacing:0.05em;
 }
@@ -130,28 +131,27 @@ h1{
 <body>
 
 <header>
-  <details>
-    <summary>OBRA</summary>
-    <div class="menu-content">
-      <a href="/cine">Cine</a>
-      <a href="/escena">Escena</a>
-      <a href="/instalaciones">Instalaciones</a>
-      <a href="https://pedroacevedo.bandcamp.com/" target="_blank">Discografía</a>
-      <a href="/contacto">Contacto</a>
-    </div>
-  </details>
+  <div class="header-inner">
+    <details>
+      <summary>I</summary>
+      <div class="menu-content">
+        <a href="/cine">Cine</a>
+        <a href="/escena">Escena</a>
+        <a href="/instalaciones">Instalaciones</a>
+        <a href="https://pedroacevedo.bandcamp.com/" target="_blank">Discografía</a>
+        <a href="/bio">Bio</a>
+        <a href="/contacto">Contacto</a>
+      </div>
+    </details>
+  </div>
 </header>
 
 <main>
 
 <h1>Pedro Acevedo</h1>
 
-<div class="subtitle">
-Músico y compositor
-</div>
-
-<div class="description">
-Trabajo con sonido, voz e instrumentos para discos, cine y escena.
+<div class="tagline">
+Discos y música original para cine y escena.
 </div>
 
 <a href="https://pedroacevedo.bandcamp.com/" target="_blank" rel="noopener">
