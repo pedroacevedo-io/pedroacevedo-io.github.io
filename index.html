@@ -8,7 +8,7 @@
 
 <style>
 
-/* ===== RESET ===== */
+/* ===== BASE ===== */
 
 html, body {
   margin: 0;
@@ -16,7 +16,6 @@ html, body {
   font-family: serif;
   background: #f5f5f5;
   color: #111;
-  scroll-behavior: smooth;
 }
 
 /* ===== HEADER FIJO ===== */
@@ -28,7 +27,7 @@ header {
   background: #f5f5f5;
   border-bottom: 1px solid #e5e5e5;
   text-align: center;
-  padding: 12px 0;
+  padding: 14px 0;
   font-size: .9rem;
   letter-spacing: .08em;
   z-index: 1000;
@@ -39,13 +38,15 @@ header a {
   color: #111;
 }
 
-/* ===== HERO ===== */
+/* ===== CONTENEDOR GENERAL ===== */
 
-.hero {
-  margin-top: 90px;
+.container {
+  margin-top: 100px;
   text-align: center;
   padding: 0 6vw;
 }
+
+/* ===== HERO ===== */
 
 .hero h1 {
   font-weight: normal;
@@ -58,25 +59,20 @@ header a {
   margin-bottom: 3rem;
 }
 
-/* ===== IMÁGENES ===== */
+/* ===== IMÁGENES (MISMO TAMAÑO EXACTO) ===== */
 
 .image-block {
-  text-align: center;
   margin-bottom: 3.5rem;
 }
 
 .image-block img {
   width: 92%;
   max-width: 1100px;
+  height: 520px;
+  object-fit: cover;
   border-radius: 8px;
   display: block;
   margin: 0 auto;
-}
-
-.image-block a {
-  display: block;
-  text-decoration: none;
-  color: #111;
 }
 
 .image-caption {
@@ -85,13 +81,13 @@ header a {
   letter-spacing: .06em;
 }
 
-/* ===== TRABAJOS (OCULTOS HASTA CLICK) ===== */
+/* ===== TRABAJOS ===== */
 
 .trabajos {
   display: none;
   max-width: 760px;
   margin: 0 auto 120px auto;
-  padding: 0 6vw;
+  text-align: left;
   line-height: 1.9;
 }
 
@@ -134,111 +130,120 @@ header a {
   text-decoration: none;
   color: #111;
   font-size: .9rem;
-}
-
-/* ===== MOSTRAR TRABAJOS AL ACTIVAR HASH ===== */
-
-#trabajos:target {
-  display: block;
-}
-
-#trabajos:target ~ .hero,
-#trabajos:target ~ .image-block {
-  display: none;
+  cursor: pointer;
 }
 
 </style>
+
 </head>
 
 <body>
 
 <header>
-  <a href="#">Pedro Acevedo</a>
+  <a href="#" onclick="showHome()">Pedro Acevedo</a>
 </header>
 
-<div id="top"></div>
+<div class="container">
 
-<section class="hero">
+  <!-- HOME -->
+  <div id="home">
 
-  <h1>Pedro Acevedo — Músico y compositor</h1>
-  <p>Músico y compositor - Trabajo con sonido, voz e instrumentos para discos, cine y escena.</p>
-
-</section>
-
-<!-- PUENTE / DISCOGRAFÍA -->
-
-<div class="image-block">
-  <a href="https://pedroacevedo.bandcamp.com" target="_blank">
-    <img src="assets/Bridge_variation1.png" alt="Discografía de Pedro Acevedo en Bandcamp">
-    <div class="image-caption">
-      Discografía · Escuchar en Bandcamp
+    <div class="hero">
+      <h1>Pedro Acevedo — Músico y compositor</h1>
+      <p>Trabajo con sonido, voz e instrumentos para discos, cine y escena.</p>
     </div>
-  </a>
+
+    <!-- PUENTE -->
+    <div class="image-block">
+      <a href="https://pedroacevedo.bandcamp.com" target="_blank">
+        <img src="assets/Bridge_variation1.png" alt="Discografía de Pedro Acevedo en Bandcamp">
+      </a>
+      <div class="image-caption">
+        Discografía · Escuchar en Bandcamp
+      </div>
+    </div>
+
+    <!-- CONTRALUZ -->
+    <div class="image-block">
+      <a href="#" onclick="showTrabajos()">
+        <img src="assets/contraluzwebpedracevedo.jpg" alt="Trabajos de Pedro Acevedo">
+      </a>
+      <div class="image-caption">
+        Trabajos · Música para cine, teatro e instalaciones
+      </div>
+    </div>
+
+  </div>
+
+  <!-- TRABAJOS -->
+  <div id="trabajos" class="trabajos">
+
+    <h2>Música para imagen y escena</h2>
+
+    <div class="section-title">Cine · Música original</div>
+
+    <div class="row">
+      <div class="year">2025</div>
+      <div class="title">Valle blanco, gallo negro — Dir. Álex Galán</div>
+    </div>
+
+    <div class="row">
+      <div class="year">2024</div>
+      <div class="title">Pico Sacro — Dir. Alberto Lobelle</div>
+    </div>
+
+    <div class="row">
+      <div class="year">2023</div>
+      <div class="title">Les Praeres — Dir. Iván Menéndez</div>
+    </div>
+
+    <div class="row">
+      <div class="year">2021</div>
+      <div class="title">Salvajes, el cuento del lobo — Dir. Álex Galán</div>
+    </div>
+
+    <div class="row">
+      <div class="year">2015</div>
+      <div class="title">The River — Dir. David Rodríguez Muñiz</div>
+    </div>
+
+    <div class="section-title">Escena</div>
+
+    <div class="row">
+      <div class="year">2023</div>
+      <div class="title">La Caja (donde la realidad pierde sus límites)</div>
+    </div>
+
+    <div class="section-title">Instalaciones</div>
+
+    <div class="row">
+      <div class="year">2022</div>
+      <div class="title">Proyecto de instalación sonora</div>
+    </div>
+
+    <div class="volver">
+      <a onclick="showHome()">Volver</a>
+    </div>
+
+  </div>
+
 </div>
 
-<!-- CONTRALUZ / TRABAJOS -->
+<script>
 
-<div class="image-block">
-  <a href="#trabajos">
-    <img src="assets/contraluzwebpedracevedo.jpg" alt="Trabajos de Pedro Acevedo">
-    <div class="image-caption">
-      Trabajos · Música para cine, teatro e instalaciones
-    </div>
-  </a>
-</div>
+function showTrabajos() {
+  document.getElementById("home").style.display = "none";
+  document.getElementById("trabajos").style.display = "block";
+  window.scrollTo(0,0);
+}
 
-<!-- TRABAJOS -->
+function showHome() {
+  document.getElementById("trabajos").style.display = "none";
+  document.getElementById("home").style.display = "block";
+  window.scrollTo(0,0);
+}
 
-<section id="trabajos" class="trabajos">
-
-  <h2>Música para imagen y escena</h2>
-
-  <div class="section-title">Cine · Música original</div>
-
-  <div class="row">
-    <div class="year">2025</div>
-    <div class="title">Valle blanco, gallo negro — Dir. Álex Galán</div>
-  </div>
-
-  <div class="row">
-    <div class="year">2024</div>
-    <div class="title">Pico Sacro — Dir. Alberto Lobelle</div>
-  </div>
-
-  <div class="row">
-    <div class="year">2023</div>
-    <div class="title">Les Praeres — Dir. Iván Menéndez</div>
-  </div>
-
-  <div class="row">
-    <div class="year">2021</div>
-    <div class="title">Salvajes, el cuento del lobo — Dir. Álex Galán</div>
-  </div>
-
-  <div class="row">
-    <div class="year">2015</div>
-    <div class="title">The River — Dir. David Rodríguez Muñiz</div>
-  </div>
-
-  <div class="section-title">Escena</div>
-
-  <div class="row">
-    <div class="year">2023</div>
-    <div class="title">La Caja (donde la realidad pierde sus límites)</div>
-  </div>
-
-  <div class="section-title">Instalaciones</div>
-
-  <div class="row">
-    <div class="year">2022</div>
-    <div class="title">Proyecto de instalación sonora</div>
-  </div>
-
-  <div class="volver">
-    <a href="#top">Volver</a>
-  </div>
-
-</section>
+</script>
 
 </body>
 </html>
