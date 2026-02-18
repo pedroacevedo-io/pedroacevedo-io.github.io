@@ -1,10 +1,12 @@
 <!doctype html>
 <html lang="es">
 <head>
+
 <meta charset="utf-8">
 <title>Pedro Acevedo — Músico y compositor</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Pedro Acevedo — Músico y compositor. Música original para cine, teatro e instalaciones.">
+
+<meta name="description" content="Pedro Acevedo — Músico y compositor. Música original para discos, cine, teatro e instalaciones.">
 
 <style>
 
@@ -12,22 +14,20 @@
    BASE
    ========================= */
 
-body {
+html, body {
   margin: 0;
+  padding: 0;
+  background: #f5f5f5;
   font-family: serif;
-  background: #f4f4f4;
   color: #111;
-  text-align: center;
+  scroll-behavior: smooth;
 }
-
-/* =========================
-   ESTRUCTURA GENERAL
-   ========================= */
 
 .wrapper {
   max-width: 1000px;
   margin: 0 auto;
-  padding: 4rem 1.5rem;
+  padding: 4rem 2rem 6rem;
+  text-align: center;
 }
 
 /* =========================
@@ -46,37 +46,32 @@ h1 {
 }
 
 /* =========================
-   IMÁGENES (MISMO TAMAÑO)
+   IMÁGENES
    ========================= */
 
 .image-block {
-  margin-bottom: 1.2rem;
+  margin-bottom: 3.5rem;
 }
 
 .image-block img {
   width: 100%;
+  max-width: 900px;
   height: 420px;
   object-fit: cover;
   border-radius: 8px;
   display: block;
+  margin: 0 auto;
+  transition: transform .6s ease, opacity .6s ease;
 }
 
-/* =========================
-   TEXTOS DEBAJO DE IMAGEN
-   ========================= */
+.image-block:hover img {
+  transform: scale(1.01);
+  opacity: 0.95;
+}
 
-.link-text {
+.caption {
   margin-top: 0.8rem;
-  font-size: 0.95rem;
-}
-
-.link-text a {
-  text-decoration: none;
-  color: #111;
-}
-
-.link-text a:hover {
-  opacity: 0.6;
+  font-size: 0.9rem;
 }
 
 /* =========================
@@ -84,47 +79,53 @@ h1 {
    ========================= */
 
 .section {
+  display: none;
   margin-top: 6rem;
+  text-align: left;
+}
+
+.section:target {
+  display: block;
 }
 
 .section h2 {
+  text-align: center;
   font-weight: normal;
-  font-size: 1.8rem;
   margin-bottom: 3rem;
+  font-size: 1.8rem;
 }
 
 .discipline {
-  text-align: left;
   margin-bottom: 3rem;
 }
 
 .discipline h3 {
-  font-size: 0.8rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
   font-weight: normal;
-  margin-bottom: 1.2rem;
+  letter-spacing: .15em;
+  font-size: .8rem;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
 }
 
 .work {
-  display: flex;
-  margin-bottom: 0.6rem;
+  margin-bottom: 1.4rem;
 }
 
 .year {
-  width: 70px;
-  color: #888;
+  color: #777;
+  display: inline-block;
+  width: 60px;
 }
 
 .title {
-  flex: 1;
+  font-weight: normal;
 }
 
 .role {
-  font-size: 0.85rem;
-  color: #777;
-  margin-left: 70px;
-  margin-bottom: 0.8rem;
+  font-size: .85rem;
+  color: #666;
+  margin-left: 60px;
+  margin-top: .2rem;
 }
 
 </style>
@@ -135,103 +136,97 @@ h1 {
 <div class="wrapper">
 
   <!-- TITULAR -->
-  <h1>Pedro Acevedo — Músico y compositor</h1>
+  <h1>Pedro Acevedo — Músico y compositor.</h1>
   <div class="subtitle">
     Trabajo con sonido, voz e instrumentos para discos, cine, teatro e instalaciones.
   </div>
 
-  <!-- PUENTE -->
+  <!-- PUENTE → BANDCAMP -->
   <div class="image-block">
-    <a href="https://pedroacevedo.bandcamp.com/" target="_blank">
-      <img src="assets/Bridge_variation1.png" alt="Discografía de Pedro Acevedo">
+    <a href="https://pedroacevedo.bandcamp.com" target="_blank">
+      <img src="assets/Bridge_variation1.png" alt="Pedro Acevedo discografía Bandcamp">
     </a>
-    <div class="link-text">
-      <a href="https://pedroacevedo.bandcamp.com/" target="_blank">
-        Discografía · Escuchar en Bandcamp
-      </a>
-    </div>
+    <div class="caption">Discografía · Escuchar en Bandcamp</div>
   </div>
 
-  <!-- CONTRALUZ -->
+  <!-- CONTRALUZ → TRABAJOS -->
   <div class="image-block">
     <a href="#trabajos">
-      <img src="assets/contraluzwebpedracevedo.jpg" alt="Trabajos de Pedro Acevedo para cine y escena">
+      <img src="assets/contraluzwebpedracevedo.jpg" alt="Pedro Acevedo música para imagen y escena">
     </a>
-    <div class="link-text">
-      <a href="#trabajos">
-        Trabajos · Música para cine, teatro e instalaciones
-      </a>
-    </div>
+    <div class="caption">Trabajos · Música para cine, teatro e instalaciones</div>
   </div>
 
-  <!-- TRABAJOS -->
+  <!-- TRABAJOS (OCULTOS HASTA CLICK) -->
   <div id="trabajos" class="section">
+
     <h2>Música para imagen y escena</h2>
 
     <div class="discipline">
       <h3>Cine</h3>
 
       <div class="work">
-        <div class="year">2025</div>
-        <div class="title">Valle blanco, gallo negro — Dir. Álex Galán</div>
+        <span class="year">2025</span>
+        <span class="title">Valle blanco, gallo negro — Dir. Álex Galán</span>
+        <div class="role">Música original (BSO)</div>
       </div>
-      <div class="role">Música original</div>
 
       <div class="work">
-        <div class="year">2024</div>
-        <div class="title">Pico Sacro — Dir. Alberto Lobelle</div>
+        <span class="year">2024</span>
+        <span class="title">Pico Sacro — Dir. Alberto Lobelle</span>
+        <div class="role">Música original (BSO)</div>
       </div>
-      <div class="role">Música original</div>
 
       <div class="work">
-        <div class="year">2021</div>
-        <div class="title">Salvajes, el cuento del lobo — Dir. Álex Galán</div>
+        <span class="year">2021</span>
+        <span class="title">Salvajes, el cuento del lobo — Dir. Álex Galán</span>
+        <div class="role">Música original (BSO)</div>
       </div>
-      <div class="role">Música original</div>
 
       <div class="work">
-        <div class="year">2023</div>
-        <div class="title">Les Praeres — Dir. Iván Menéndez</div>
+        <span class="year">2023</span>
+        <span class="title">Les Praeres — Dir. Iván Menéndez</span>
+        <div class="role">Música original</div>
       </div>
-      <div class="role">Música original</div>
 
       <div class="work">
-        <div class="year">2015</div>
-        <div class="title">The River — Dir. David Rodríguez Muñiz</div>
+        <span class="year">2015</span>
+        <span class="title">The River — Dir. David Rodríguez Muñiz</span>
+        <div class="role">Música original</div>
       </div>
-      <div class="role">Música original</div>
 
       <div class="work">
-        <div class="year">2024</div>
-        <div class="title">Otro tono de azul — Dir. David Rodríguez Muñiz</div>
+        <span class="year">2024</span>
+        <span class="title">Otro tono de azul — Dir. David Rodríguez Muñiz</span>
+        <div class="role">Música original</div>
       </div>
-      <div class="role">Música original</div>
 
       <div class="work">
-        <div class="year">2021</div>
-        <div class="title">Nyami Nyami — Dir. David Rodríguez Muñiz</div>
+        <span class="year">2021</span>
+        <span class="title">Nyami Nyami — Dir. David Rodríguez Muñiz</span>
+        <div class="role">Música original</div>
       </div>
-      <div class="role">Música original</div>
 
       <div class="work">
-        <div class="year">2019</div>
-        <div class="title">Beyond the Glacier — Dir. David Rodríguez Muñiz</div>
+        <span class="year">2019</span>
+        <span class="title">Beyond the Glacier — Dir. David Rodríguez Muñiz</span>
+        <div class="role">Música original</div>
       </div>
-      <div class="role">Música original</div>
 
       <div class="work">
-        <div class="year">2017</div>
-        <div class="title">Refugiados — Dir. David Rodríguez Muñiz</div>
+        <span class="year">2017</span>
+        <span class="title">Refugiados — Dir. David Rodríguez Muñiz</span>
+        <div class="role">Música original</div>
       </div>
-      <div class="role">Música original</div>
 
       <div class="work">
-        <div class="year">2016</div>
-        <div class="title">Monstruo — Dir. David Rodríguez Muñiz</div>
+        <span class="year">2016</span>
+        <span class="title">Monstruo — Dir. David Rodríguez Muñiz</span>
+        <div class="role">Música original</div>
       </div>
-      <div class="role">Música original</div>
 
     </div>
+
   </div>
 
 </div>
