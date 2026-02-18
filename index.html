@@ -26,35 +26,43 @@ header{
   width:100%;
   background:#f5f5f3;
   border-bottom:1px solid #ddd;
-  padding:14px 0;
+  padding:14px 30px;
   font-size:14px;
   letter-spacing:0.12em;
   z-index:1000;
+  display:flex;
+  justify-content:flex-end; /* A la derecha */
 }
 
-/* Menú */
-.menu{
+/* Menu clickable */
+details{
   position:relative;
-  display:inline-block;
+}
+
+summary{
+  list-style:none;
   cursor:pointer;
 }
 
-.menu span{
-  text-decoration:none;
+summary::-webkit-details-marker{
+  display:none;
+}
+
+summary:hover{
+  opacity:.6;
 }
 
 .menu-content{
   position:absolute;
+  right:0;
   top:40px;
-  left:50%;
-  transform:translateX(-50%);
   background:#f5f5f3;
-  padding:30px 40px;
-  display:none;
+  border:1px solid #ddd;
+  padding:25px 35px;
+  display:flex;
   flex-direction:column;
   gap:18px;
-  border:1px solid #ddd;
-  min-width:180px;
+  min-width:200px;
 }
 
 .menu-content a{
@@ -66,11 +74,6 @@ header{
 
 .menu-content a:hover{
   opacity:.6;
-}
-
-/* Mostrar al hover */
-.menu:hover .menu-content{
-  display:flex;
 }
 
 main{
@@ -127,8 +130,8 @@ h1{
 <body>
 
 <header>
-  <div class="menu">
-    <span>OBRA</span>
+  <details>
+    <summary>OBRA</summary>
     <div class="menu-content">
       <a href="/cine">Cine</a>
       <a href="/escena">Escena</a>
@@ -136,7 +139,7 @@ h1{
       <a href="https://pedroacevedo.bandcamp.com/" target="_blank">Discografía</a>
       <a href="/contacto">Contacto</a>
     </div>
-  </div>
+  </details>
 </header>
 
 <main>
