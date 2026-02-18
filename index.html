@@ -1,154 +1,153 @@
 <!doctype html>
 <html lang="es">
 <head>
-
 <meta charset="utf-8">
-<title>Pedro Acevedo — Músico y compositor</title>
+<title>Pedro Acevedo</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Pedro Acevedo — Músico y compositor. Música original para discos, cine, teatro e instalaciones.">
+<meta name="description" content="Música original para cine, escena e instalaciones. Pedro Acevedo.">
 
 <style>
+
+/* =========================
+   RESET
+   ========================= */
 
 html, body {
   margin: 0;
   padding: 0;
-  background: #f5f5f5;
   font-family: serif;
+  background: #f5f5f5;
   color: #111;
   scroll-behavior: smooth;
 }
 
-/* HEADER FIJO */
+/* =========================
+   HEADER FIJO
+   ========================= */
 
-.header {
+header {
   position: fixed;
   top: 0;
-  left: 0;
   width: 100%;
-  background: rgba(245,245,245,0.95);
-  backdrop-filter: blur(4px);
+  background: #f5f5f5;
   text-align: center;
-  padding: .8rem 1rem;
+  padding: 14px 0;
   font-size: .85rem;
+  letter-spacing: .08em;
   z-index: 1000;
-  border-bottom: 1px solid rgba(0,0,0,0.05);
 }
 
-.header strong {
-  font-weight: normal;
-}
-
-/* CONTENIDO */
-
-.wrapper {
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 8rem 2rem 8rem; /* espacio superior por header */
-  text-align: center;
-}
-
-/* HERO */
+/* =========================
+   HERO
+   ========================= */
 
 .hero {
-  transition: opacity .6s ease;
+  padding-top: 80px;
+  text-align: center;
+  max-width: 1100px;
+  margin: 0 auto;
 }
 
-h1 {
-  font-weight: normal;
-  font-size: 1.6rem;
-  margin-bottom: .6rem;
-}
-
-.subtitle {
+.hero p {
   font-size: 1rem;
-  margin-bottom: 3.5rem;
+  margin-bottom: 2.5rem;
 }
 
 .image-block {
-  margin-bottom: 4rem;
+  margin-bottom: 3.5rem;
 }
 
 .image-block img {
   width: 100%;
-  max-width: 900px;
-  height: 420px;
+  max-width: 1100px;
+  height: 60vh;
   object-fit: cover;
-  border-radius: 8px;
+  border-radius: 6px;
   display: block;
   margin: 0 auto;
 }
 
-.caption {
+.image-caption {
   margin-top: .8rem;
-  font-size: .9rem;
+  font-size: .85rem;
+  letter-spacing: .05em;
 }
 
-/* SECCIÓN */
-
-.section {
-  display: none;
-  margin-top: 1rem;
-  text-align: left;
-}
-
-.section:target {
-  display: block;
-}
-
-/* Ocultar hero cuando sección activa */
-
-body:has(.section:target) .hero {
-  display: none;
-}
-
-/* TÍTULO */
-
-.section h2 {
-  text-align: center;
-  font-weight: normal;
-  font-size: 1.8rem;
-  margin-bottom: 3rem;
-}
-
-/* DISCIPLINAS */
-
-.discipline {
-  margin-bottom: 3rem;
-}
-
-.discipline h3 {
-  font-weight: normal;
-  letter-spacing: .15em;
-  font-size: .8rem;
-  text-transform: uppercase;
-  margin-bottom: 1.5rem;
-}
-
-/* OBRAS */
-
-.work {
-  margin-bottom: 1.2rem;
-}
-
-.year {
-  display: inline-block;
-  width: 60px;
-  color: #777;
-}
-
-/* BOTÓN VOLVER */
-
-.back {
-  display: block;
-  text-align: center;
-  margin-top: 4rem;
-  font-size: .9rem;
+.image-caption a {
   text-decoration: none;
   color: #111;
 }
 
-.back:hover {
+.image-caption a:hover {
   opacity: .6;
+}
+
+/* =========================
+   TRABAJOS
+   ========================= */
+
+#trabajos {
+  display: none;
+  max-width: 760px;
+  margin: 0 auto;
+  padding-bottom: 80px;
+}
+
+#trabajos:target {
+  display: block;
+}
+
+#trabajos h1 {
+  text-align: center;
+  font-weight: normal;
+  font-size: 2rem;
+  margin-bottom: 4rem;
+}
+
+.section-title {
+  margin-top: 3.5rem;
+  margin-bottom: 1.5rem;
+  font-size: .75rem;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: #666;
+}
+
+.row {
+  display: flex;
+  margin-bottom: 1.2rem;
+}
+
+.year {
+  width: 70px;
+  color: #888;
+}
+
+.title {
+  flex: 1;
+}
+
+.back {
+  text-align: center;
+  margin-top: 5rem;
+  font-size: .85rem;
+}
+
+.back a {
+  text-decoration: none;
+  color: #111;
+}
+
+.back a:hover {
+  opacity: .6;
+}
+
+/* =========================
+   OCULTAR HERO AL ABRIR
+   ========================= */
+
+body:has(#trabajos:target) .hero {
+  display: none;
 }
 
 </style>
@@ -156,72 +155,84 @@ body:has(.section:target) .hero {
 
 <body>
 
-<div class="header">
-  <strong>Pedro Acevedo</strong> — Músico y compositor
-</div>
+<header>
+  Pedro Acevedo
+</header>
 
-<div class="wrapper">
+<section class="hero">
 
-  <!-- HERO -->
-  <div class="hero">
+  <p>
+    Músico y compositor — Trabajo con sonido, voz e instrumentos para discos, cine y escena.
+  </p>
 
-    <h1>Pedro Acevedo — Músico y compositor.</h1>
-    <div class="subtitle">
-      Trabajo con sonido, voz e instrumentos para discos, cine, teatro e instalaciones.
-    </div>
+  <!-- PUENTE / DISCOGRAFÍA -->
 
-    <div class="image-block">
+  <div class="image-block">
+    <a href="https://pedroacevedo.bandcamp.com" target="_blank">
+      <img src="assets/Bridge_variation1.png" alt="Discografía Pedro Acevedo">
+    </a>
+    <div class="image-caption">
       <a href="https://pedroacevedo.bandcamp.com" target="_blank">
-        <img src="assets/Bridge_variation1.png" alt="Pedro Acevedo discografía Bandcamp">
+        Discografía · Escuchar en Bandcamp
       </a>
-      <div class="caption">Discografía · Escuchar en Bandcamp</div>
     </div>
+  </div>
 
-    <div class="image-block">
+  <!-- CONTRALUZ / TRABAJOS -->
+
+  <div class="image-block">
+    <a href="#trabajos">
+      <img src="assets/contraluzwebpedracevedo.jpg" alt="Trabajos musicales Pedro Acevedo">
+    </a>
+    <div class="image-caption">
       <a href="#trabajos">
-        <img src="assets/contraluzwebpedracevedo.jpg" alt="Pedro Acevedo música para imagen y escena">
+        Trabajos · Música para cine, teatro e instalaciones
       </a>
-      <div class="caption">Trabajos · Música para cine, teatro e instalaciones</div>
     </div>
-
   </div>
 
-  <!-- TRABAJOS -->
-  <div id="trabajos" class="section">
+</section>
 
-    <h2>Música para imagen y escena</h2>
+<!-- =========================
+     TRABAJOS
+     ========================= -->
 
-    <div class="discipline">
-      <h3>Cine — Música original</h3>
+<section id="trabajos">
 
-      <div class="work"><span class="year">2025</span>Valle blanco, gallo negro — Dir. Álex Galán</div>
-      <div class="work"><span class="year">2024</span>Pico Sacro — Dir. Alberto Lobelle</div>
-      <div class="work"><span class="year">2024</span>Otro tono de azul — Dir. David Rodríguez Muñiz</div>
-      <div class="work"><span class="year">2023</span>Les Praeres — Dir. Iván Menéndez</div>
-      <div class="work"><span class="year">2021</span>Salvajes, el cuento del lobo — Dir. Álex Galán</div>
-      <div class="work"><span class="year">2021</span>Nyami Nyami — Dir. David Rodríguez Muñiz</div>
-      <div class="work"><span class="year">2019</span>Beyond the Glacier — Dir. David Rodríguez Muñiz</div>
-      <div class="work"><span class="year">2017</span>Refugiados — Dir. David Rodríguez Muñiz</div>
-      <div class="work"><span class="year">2016</span>Monstruo — Dir. David Rodríguez Muñiz</div>
-      <div class="work"><span class="year">2015</span>The River — Dir. David Rodríguez Muñiz</div>
+  <h1>Música para imagen y escena</h1>
 
-    </div>
+  <div class="section-title">Cine · Música original</div>
 
-    <div class="discipline">
-      <h3>Escena — Música original</h3>
-      <div class="work"><span class="year">2023</span>La Caja (donde la realidad pierde sus límites)</div>
-    </div>
-
-    <div class="discipline">
-      <h3>Instalaciones — Composición sonora</h3>
-      <div class="work"><span class="year">2022</span>Proyecto de instalación sonora</div>
-    </div>
-
-    <a href="#" class="back">← Volver</a>
-
+  <div class="row">
+    <div class="year">2025</div>
+    <div class="title">Valle blanco, gallo negro — Dir. Álex Galán</div>
   </div>
 
-</div>
+  <div class="row">
+    <div class="year">2024</div>
+    <div class="title">Pico Sacro — Dir. Alberto Lobelle</div>
+  </div>
+
+  <div class="row">
+    <div class="year">2023</div>
+    <div class="title">Les Praeres — Dir. Iván Menéndez</div>
+  </div>
+
+  <div class="row">
+    <div class="year">2021</div>
+    <div class="title">Salvajes, el cuento del lobo — Dir. Álex Galán</div>
+  </div>
+
+  <div class="row">
+    <div class="year">2015</div>
+    <div class="title">The River — Dir. David Rodríguez Muñiz</div>
+  </div>
+
+  <div class="back">
+    <a href="#">Volver</a>
+  </div>
+
+</section>
 
 </body>
 </html>
