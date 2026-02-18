@@ -17,7 +17,9 @@ html, body {
   color: #111;
 }
 
-/* HERO */
+/* =========================
+   HERO
+   ========================= */
 
 .hero {
   min-height: 85vh;
@@ -63,7 +65,9 @@ nav a:hover {
   opacity: .6;
 }
 
-/* SECCIONES */
+/* =========================
+   SECCIONES
+   ========================= */
 
 .content {
   display: none;
@@ -77,11 +81,14 @@ nav a:hover {
   display: block;
 }
 
+/* Hero desaparece cuando hay sección activa */
 body:has(.content:target) .hero {
   display: none;
 }
 
-/* TIPOGRAFÍA */
+/* =========================
+   TITULOS
+   ========================= */
 
 .content h1 {
   text-align: center;
@@ -97,16 +104,28 @@ body:has(.content:target) .hero {
   font-size: .95rem;
 }
 
-/* Subdisciplinas */
+/* Categoría principal (Cine, Escena, Instalaciones) */
 
-.category {
-  margin-top: 2.5rem;
-  margin-bottom: 1rem;
-  font-size: .75rem;
+.category-main {
+  margin-top: 3rem;
+  margin-bottom: 1.5rem;
+  font-size: .9rem;
+  letter-spacing: .12em;
   text-transform: uppercase;
-  letter-spacing: .2em;
-  color: #666;
+  color: #333;
 }
+
+/* Subcategorías (Largometrajes, etc.) */
+
+.category-sub {
+  margin-top: 2rem;
+  margin-bottom: .8rem;
+  font-size: .8rem;
+  letter-spacing: .05em;
+  color: #777;
+}
+
+/* Filas */
 
 .row {
   display: flex;
@@ -126,6 +145,8 @@ body:has(.content:target) .hero {
   color: #777;
   font-size: .9rem;
 }
+
+/* Navegación inferior */
 
 .back {
   text-align: center;
@@ -149,7 +170,9 @@ body:has(.content:target) .hero {
 
 <body>
 
-<!-- HERO -->
+<!-- =========================
+     HERO
+     ========================= -->
 
 <section class="hero">
 
@@ -173,7 +196,9 @@ body:has(.content:target) .hero {
 
 </section>
 
-<!-- TRABAJOS -->
+<!-- =========================
+     TRABAJOS
+     ========================= -->
 
 <section id="trabajos" class="content">
 
@@ -183,24 +208,22 @@ body:has(.content:target) .hero {
     Proyectos en distintas disciplinas artísticas. Música original para imagen y escena.
   </div>
 
-  <!-- =========================
-       CINE
-       ========================= -->
+  <!-- CINE -->
 
-  <div class="category">Cine</div>
+  <div class="category-main">Cine</div>
 
-  <div class="category">Largometrajes</div>
+  <div class="category-sub">Largometrajes</div>
 
   <div class="row"><div class="year">2025</div><div class="details">Valle blanco, gallo negro — Dir. Álex Galán<div class="role">Música original</div></div></div>
   <div class="row"><div class="year">2024</div><div class="details">Pico Sacro — Dir. Alberto Lobelle<div class="role">Música original</div></div></div>
   <div class="row"><div class="year">2021</div><div class="details">Salvajes, el cuento del lobo — Dir. Álex Galán<div class="role">Música original</div></div></div>
 
-  <div class="category">Mediometrajes</div>
+  <div class="category-sub">Mediometrajes</div>
 
   <div class="row"><div class="year">2023</div><div class="details">Les Praeres — Dir. Iván Menéndez<div class="role">Música original</div></div></div>
   <div class="row"><div class="year">2015</div><div class="details">The River — Dir. David Rodríguez Muñiz<div class="role">Música original</div></div></div>
 
-  <div class="category">Cortometrajes</div>
+  <div class="category-sub">Cortometrajes</div>
 
   <div class="row"><div class="year">2024</div><div class="details">Otro tono de azul — Dir. David Rodríguez Muñiz<div class="role">Música original</div></div></div>
   <div class="row"><div class="year">2021</div><div class="details">Nyami Nyami — Dir. David Rodríguez Muñiz<div class="role">Música original</div></div></div>
@@ -210,15 +233,27 @@ body:has(.content:target) .hero {
 
   <!-- ESCENA -->
 
-  <div class="category">Escena</div>
+  <div class="category-main">Escena</div>
 
-  <div class="row"><div class="year">2023</div><div class="details">La Caja (donde la realidad pierde sus límites)<div class="role">Música original</div></div></div>
+  <div class="row">
+    <div class="year">2023</div>
+    <div class="details">
+      La Caja (donde la realidad pierde sus límites)
+      <div class="role">Música original</div>
+    </div>
+  </div>
 
   <!-- INSTALACIONES -->
 
-  <div class="category">Instalaciones</div>
+  <div class="category-main">Instalaciones</div>
 
-  <div class="row"><div class="year">2022</div><div class="details">Proyecto de instalación sonora<div class="role">Composición e intervención sonora</div></div></div>
+  <div class="row">
+    <div class="year">2022</div>
+    <div class="details">
+      Proyecto de instalación sonora
+      <div class="role">Composición e intervención sonora</div>
+    </div>
+  </div>
 
   <div class="back">
     <a href="#">← Inicio</a>
@@ -226,7 +261,9 @@ body:has(.content:target) .hero {
 
 </section>
 
-<!-- RESTO -->
+<!-- =========================
+     DISCOS
+     ========================= -->
 
 <section id="discos" class="content">
   <h1>Discos</h1>
@@ -234,11 +271,19 @@ body:has(.content:target) .hero {
   <div class="back"><a href="#">← Inicio</a></div>
 </section>
 
+<!-- =========================
+     PREMIOS
+     ========================= -->
+
 <section id="premios" class="content">
   <h1>Premios</h1>
   <div class="placeholder">Listado de premios y nominaciones próximamente.</div>
   <div class="back"><a href="#">← Inicio</a></div>
 </section>
+
+<!-- =========================
+     CONTACTO
+     ========================= -->
 
 <section id="contacto" class="content">
   <h1>Contacto</h1>
