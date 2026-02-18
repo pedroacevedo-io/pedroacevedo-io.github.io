@@ -18,10 +18,32 @@ html, body {
   scroll-behavior: smooth;
 }
 
+/* HEADER FIJO */
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(245,245,245,0.95);
+  backdrop-filter: blur(4px);
+  text-align: center;
+  padding: .8rem 1rem;
+  font-size: .85rem;
+  z-index: 1000;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.header strong {
+  font-weight: normal;
+}
+
+/* CONTENIDO */
+
 .wrapper {
   max-width: 1000px;
   margin: 0 auto;
-  padding: 6rem 2rem 8rem;
+  padding: 8rem 2rem 8rem; /* espacio superior por header */
   text-align: center;
 }
 
@@ -134,6 +156,10 @@ body:has(.section:target) .hero {
 
 <body>
 
+<div class="header">
+  <strong>Pedro Acevedo</strong> — Músico y compositor
+</div>
+
 <div class="wrapper">
 
   <!-- HERO -->
@@ -144,7 +170,6 @@ body:has(.section:target) .hero {
       Trabajo con sonido, voz e instrumentos para discos, cine, teatro e instalaciones.
     </div>
 
-    <!-- PUENTE -->
     <div class="image-block">
       <a href="https://pedroacevedo.bandcamp.com" target="_blank">
         <img src="assets/Bridge_variation1.png" alt="Pedro Acevedo discografía Bandcamp">
@@ -152,7 +177,6 @@ body:has(.section:target) .hero {
       <div class="caption">Discografía · Escuchar en Bandcamp</div>
     </div>
 
-    <!-- CONTRALUZ -->
     <div class="image-block">
       <a href="#trabajos">
         <img src="assets/contraluzwebpedracevedo.jpg" alt="Pedro Acevedo música para imagen y escena">
@@ -162,13 +186,11 @@ body:has(.section:target) .hero {
 
   </div>
 
-
   <!-- TRABAJOS -->
   <div id="trabajos" class="section">
 
     <h2>Música para imagen y escena</h2>
 
-    <!-- CINE -->
     <div class="discipline">
       <h3>Cine — Música original</h3>
 
@@ -185,24 +207,14 @@ body:has(.section:target) .hero {
 
     </div>
 
-    <!-- ESCENA -->
     <div class="discipline">
       <h3>Escena — Música original</h3>
-
-      <div class="work">
-        <span class="year">2023</span>
-        La Caja (donde la realidad pierde sus límites)
-      </div>
+      <div class="work"><span class="year">2023</span>La Caja (donde la realidad pierde sus límites)</div>
     </div>
 
-    <!-- INSTALACIONES -->
     <div class="discipline">
       <h3>Instalaciones — Composición sonora</h3>
-
-      <div class="work">
-        <span class="year">2022</span>
-        Proyecto de instalación sonora
-      </div>
+      <div class="work"><span class="year">2022</span>Proyecto de instalación sonora</div>
     </div>
 
     <a href="#" class="back">← Volver</a>
