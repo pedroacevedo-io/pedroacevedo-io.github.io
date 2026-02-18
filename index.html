@@ -87,7 +87,7 @@ body:has(.content:target) .hero {
   text-align: center;
   font-weight: normal;
   font-size: 1.6rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 .subtitle {
@@ -97,35 +97,9 @@ body:has(.content:target) .hero {
   font-size: .95rem;
 }
 
-.subnav {
-  text-align: center;
-  margin-bottom: 3rem;
-  font-size: .85rem;
-  letter-spacing: .06em;
-}
-
-.subnav a {
-  text-decoration: none;
-  color: #111;
-  margin: 0 .8rem;
-}
-
-.subnav a:hover {
-  opacity: .6;
-}
-
-h2 {
-  font-weight: normal;
-  text-transform: uppercase;
-  font-size: .8rem;
-  letter-spacing: .18em;
-  margin-top: 2.5rem;
-  margin-bottom: 1rem;
-}
-
 .row {
   display: flex;
-  margin-bottom: .6rem;
+  margin-bottom: .7rem;
 }
 
 .year {
@@ -133,8 +107,13 @@ h2 {
   color: #888;
 }
 
-.title {
+.details {
   flex: 1;
+}
+
+.role {
+  color: #777;
+  font-size: .9rem;
 }
 
 .back {
@@ -183,20 +162,64 @@ h2 {
 
 </section>
 
-<!-- TRABAJOS -->
+<!-- TRABAJOS (lista unificada) -->
 
 <section id="trabajos" class="content">
 
   <h1>Trabajos</h1>
 
   <div class="subtitle">
-    Proyectos desarrollados en cine, escena e instalaciones.
+    Proyectos en distintas disciplinas artísticas. Música original para imagen y escena.
   </div>
 
-  <div class="subnav">
-    <a href="#cine">Cine</a>
-    <a href="#escena">Escena</a>
-    <a href="#instalaciones">Instalaciones</a>
+  <!-- LISTA MIXTA -->
+
+  <div class="row">
+    <div class="year">2025</div>
+    <div class="details">
+      Valle blanco, gallo negro — Dir. Álex Galán
+      <div class="role">Música original · Cine</div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="year">2024</div>
+    <div class="details">
+      Pico Sacro — Dir. Alberto Lobelle
+      <div class="role">Música original · Cine</div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="year">2023</div>
+    <div class="details">
+      Les Praeres — Dir. Iván Menéndez
+      <div class="role">Música original · Cine</div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="year">2023</div>
+    <div class="details">
+      La Caja (donde la realidad pierde sus límites)
+      <div class="role">Música original · Escena</div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="year">2021</div>
+    <div class="details">
+      Salvajes, el cuento del lobo — Dir. Álex Galán
+      <div class="role">Música original · Cine</div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="year">2019</div>
+    <div class="details">
+      Beyond the Glacier — Dir. David Rodríguez Muñiz
+      <div class="role">Música original · Cine</div>
+    </div>
   </div>
 
   <div class="back">
@@ -205,45 +228,7 @@ h2 {
 
 </section>
 
-<!-- CINE COMPLETO -->
-
-<section id="cine" class="content">
-
-  <h1>Cine</h1>
-
-  <h2>Largometrajes</h2>
-  <div class="row"><div class="year">2025</div><div class="title">Valle blanco, gallo negro — Dir. Álex Galán</div></div>
-  <div class="row"><div class="year">2024</div><div class="title">Pico Sacro — Dir. Alberto Lobelle</div></div>
-  <div class="row"><div class="year">2021</div><div class="title">Salvajes, el cuento del lobo — Dir. Álex Galán</div></div>
-
-  <h2>Mediometrajes</h2>
-  <div class="row"><div class="year">2023</div><div class="title">Les Praeres — Dir. Iván Menéndez</div></div>
-  <div class="row"><div class="year">2015</div><div class="title">The River — Dir. David Rodríguez Muñiz</div></div>
-
-  <h2>Cortometrajes</h2>
-  <div class="row"><div class="year">2024</div><div class="title">Otro tono de azul — Dir. David Rodríguez Muñiz</div></div>
-  <div class="row"><div class="year">2021</div><div class="title">Nyami Nyami — Dir. David Rodríguez Muñiz</div></div>
-  <div class="row"><div class="year">2019</div><div class="title">Beyond the Glacier — Dir. David Rodríguez Muñiz</div></div>
-  <div class="row"><div class="year">2017</div><div class="title">Refugiados — Dir. David Rodríguez Muñiz</div></div>
-  <div class="row"><div class="year">2016</div><div class="title">Monstruo — Dir. David Rodríguez Muñiz</div></div>
-
-  <div class="back"><a href="#trabajos">← Trabajos</a></div>
-
-</section>
-
 <!-- RESTO SECCIONES -->
-
-<section id="escena" class="content">
-  <h1>Escena</h1>
-  <div class="placeholder">Contenido en desarrollo.</div>
-  <div class="back"><a href="#trabajos">← Trabajos</a></div>
-</section>
-
-<section id="instalaciones" class="content">
-  <h1>Instalaciones</h1>
-  <div class="placeholder">Contenido en desarrollo.</div>
-  <div class="back"><a href="#trabajos">← Trabajos</a></div>
-</section>
 
 <section id="discos" class="content">
   <h1>Discos</h1>
