@@ -9,8 +9,6 @@
 
 <style>
 
-/* BASE */
-
 html, body {
   margin: 0;
   padding: 0;
@@ -36,7 +34,7 @@ html, body {
 h1 {
   font-weight: normal;
   font-size: 1.6rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: .5rem;
 }
 
 .subtitle {
@@ -56,24 +54,18 @@ h1 {
   border-radius: 8px;
   display: block;
   margin: 0 auto;
-  transition: transform .6s ease, opacity .6s ease;
-}
-
-.image-block:hover img {
-  transform: scale(1.01);
-  opacity: 0.95;
 }
 
 .caption {
-  margin-top: 0.8rem;
-  font-size: 0.9rem;
+  margin-top: .8rem;
+  font-size: .9rem;
 }
 
-/* TRABAJOS */
+/* SECCIÓN TRABAJOS */
 
 .section {
   display: none;
-  margin-top: 6rem;
+  margin-top: 2rem;
   text-align: left;
 }
 
@@ -81,27 +73,39 @@ h1 {
   display: block;
 }
 
-/* 🔥 CLAVE: ocultar hero cuando trabajos está activo */
+/* Ocultar hero cuando sección activa */
 
 body:has(.section:target) .hero {
-  opacity: 0;
-  transform: translateY(-20px);
-  pointer-events: none;
-  height: 0;
-  overflow: hidden;
+  display: none;
 }
 
-/* CONTENIDO TRABAJOS */
+/* BOTÓN VOLVER */
+
+.back {
+  display: inline-block;
+  margin-bottom: 2.5rem;
+  font-size: .9rem;
+  text-decoration: none;
+  color: #111;
+}
+
+.back:hover {
+  opacity: .6;
+}
+
+/* TÍTULO */
 
 .section h2 {
   text-align: center;
   font-weight: normal;
-  margin-bottom: 3rem;
   font-size: 1.8rem;
+  margin-bottom: 4rem;
 }
 
+/* DISCIPLINAS */
+
 .discipline {
-  margin-bottom: 3rem;
+  margin-bottom: 4rem;
 }
 
 .discipline h3 {
@@ -113,13 +117,13 @@ body:has(.section:target) .hero {
 }
 
 .work {
-  margin-bottom: 1.4rem;
+  margin-bottom: 1.6rem;
 }
 
 .year {
-  color: #777;
   display: inline-block;
   width: 60px;
+  color: #777;
 }
 
 .role {
@@ -162,11 +166,15 @@ body:has(.section:target) .hero {
 
   </div>
 
+
   <!-- TRABAJOS -->
   <div id="trabajos" class="section">
 
+    <a href="#" class="back">← Volver</a>
+
     <h2>Música para imagen y escena</h2>
 
+    <!-- CINE -->
     <div class="discipline">
       <h3>Cine</h3>
 
@@ -182,8 +190,76 @@ body:has(.section:target) .hero {
         <div class="role">Música original (BSO)</div>
       </div>
 
-      <!-- resto igual -->
+      <div class="work">
+        <span class="year">2021</span>
+        Salvajes, el cuento del lobo — Dir. Álex Galán
+        <div class="role">Música original (BSO)</div>
+      </div>
 
+      <div class="work">
+        <span class="year">2023</span>
+        Les Praeres — Dir. Iván Menéndez
+        <div class="role">Música original (BSO)</div>
+      </div>
+
+      <div class="work">
+        <span class="year">2015</span>
+        The River — Dir. David Rodríguez Muñiz
+        <div class="role">Música original (BSO)</div>
+      </div>
+
+      <div class="work">
+        <span class="year">2024</span>
+        Otro tono de azul — Dir. David Rodríguez Muñiz
+        <div class="role">Música original (BSO)</div>
+      </div>
+
+      <div class="work">
+        <span class="year">2021</span>
+        Nyami Nyami — Dir. David Rodríguez Muñiz
+        <div class="role">Música original (BSO)</div>
+      </div>
+
+      <div class="work">
+        <span class="year">2019</span>
+        Beyond the Glacier — Dir. David Rodríguez Muñiz
+        <div class="role">Música original (BSO)</div>
+      </div>
+
+      <div class="work">
+        <span class="year">2017</span>
+        Refugiados — Dir. David Rodríguez Muñiz
+        <div class="role">Música original (BSO)</div>
+      </div>
+
+      <div class="work">
+        <span class="year">2016</span>
+        Monstruo — Dir. David Rodríguez Muñiz
+        <div class="role">Música original (BSO)</div>
+      </div>
+
+    </div>
+
+    <!-- ESCENA -->
+    <div class="discipline">
+      <h3>Escena</h3>
+
+      <div class="work">
+        <span class="year">2023</span>
+        La Caja (donde la realidad pierde sus límites)
+        <div class="role">Música original</div>
+      </div>
+    </div>
+
+    <!-- INSTALACIONES -->
+    <div class="discipline">
+      <h3>Instalaciones</h3>
+
+      <div class="work">
+        <span class="year">2022</span>
+        Proyecto de instalación sonora
+        <div class="role">Composición e intervención sonora</div>
+      </div>
     </div>
 
   </div>
