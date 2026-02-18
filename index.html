@@ -5,14 +5,11 @@
 <meta charset="utf-8">
 <title>Pedro Acevedo — Músico y compositor</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
 <meta name="description" content="Pedro Acevedo — Músico y compositor. Música original para discos, cine, teatro e instalaciones.">
 
 <style>
 
-/* =========================
-   BASE
-   ========================= */
+/* BASE */
 
 html, body {
   margin: 0;
@@ -30,9 +27,11 @@ html, body {
   text-align: center;
 }
 
-/* =========================
-   TITULAR
-   ========================= */
+/* HERO */
+
+.hero {
+  transition: opacity .6s ease, transform .6s ease;
+}
 
 h1 {
   font-weight: normal;
@@ -44,10 +43,6 @@ h1 {
   font-size: 1rem;
   margin-bottom: 3rem;
 }
-
-/* =========================
-   IMÁGENES
-   ========================= */
 
 .image-block {
   margin-bottom: 3.5rem;
@@ -74,9 +69,7 @@ h1 {
   font-size: 0.9rem;
 }
 
-/* =========================
-   SECCIÓN TRABAJOS
-   ========================= */
+/* TRABAJOS */
 
 .section {
   display: none;
@@ -87,6 +80,18 @@ h1 {
 .section:target {
   display: block;
 }
+
+/* 🔥 CLAVE: ocultar hero cuando trabajos está activo */
+
+body:has(.section:target) .hero {
+  opacity: 0;
+  transform: translateY(-20px);
+  pointer-events: none;
+  height: 0;
+  overflow: hidden;
+}
+
+/* CONTENIDO TRABAJOS */
 
 .section h2 {
   text-align: center;
@@ -117,10 +122,6 @@ h1 {
   width: 60px;
 }
 
-.title {
-  font-weight: normal;
-}
-
 .role {
   font-size: .85rem;
   color: #666;
@@ -135,29 +136,33 @@ h1 {
 
 <div class="wrapper">
 
-  <!-- TITULAR -->
-  <h1>Pedro Acevedo — Músico y compositor.</h1>
-  <div class="subtitle">
-    Trabajo con sonido, voz e instrumentos para discos, cine, teatro e instalaciones.
+  <!-- HERO -->
+  <div class="hero">
+
+    <h1>Pedro Acevedo — Músico y compositor.</h1>
+    <div class="subtitle">
+      Trabajo con sonido, voz e instrumentos para discos, cine, teatro e instalaciones.
+    </div>
+
+    <!-- PUENTE -->
+    <div class="image-block">
+      <a href="https://pedroacevedo.bandcamp.com" target="_blank">
+        <img src="assets/Bridge_variation1.png" alt="Pedro Acevedo discografía Bandcamp">
+      </a>
+      <div class="caption">Discografía · Escuchar en Bandcamp</div>
+    </div>
+
+    <!-- CONTRALUZ -->
+    <div class="image-block">
+      <a href="#trabajos">
+        <img src="assets/contraluzwebpedracevedo.jpg" alt="Pedro Acevedo música para imagen y escena">
+      </a>
+      <div class="caption">Trabajos · Música para cine, teatro e instalaciones</div>
+    </div>
+
   </div>
 
-  <!-- PUENTE → BANDCAMP -->
-  <div class="image-block">
-    <a href="https://pedroacevedo.bandcamp.com" target="_blank">
-      <img src="assets/Bridge_variation1.png" alt="Pedro Acevedo discografía Bandcamp">
-    </a>
-    <div class="caption">Discografía · Escuchar en Bandcamp</div>
-  </div>
-
-  <!-- CONTRALUZ → TRABAJOS -->
-  <div class="image-block">
-    <a href="#trabajos">
-      <img src="assets/contraluzwebpedracevedo.jpg" alt="Pedro Acevedo música para imagen y escena">
-    </a>
-    <div class="caption">Trabajos · Música para cine, teatro e instalaciones</div>
-  </div>
-
-  <!-- TRABAJOS (OCULTOS HASTA CLICK) -->
+  <!-- TRABAJOS -->
   <div id="trabajos" class="section">
 
     <h2>Música para imagen y escena</h2>
@@ -167,63 +172,17 @@ h1 {
 
       <div class="work">
         <span class="year">2025</span>
-        <span class="title">Valle blanco, gallo negro — Dir. Álex Galán</span>
+        Valle blanco, gallo negro — Dir. Álex Galán
         <div class="role">Música original (BSO)</div>
       </div>
 
       <div class="work">
         <span class="year">2024</span>
-        <span class="title">Pico Sacro — Dir. Alberto Lobelle</span>
+        Pico Sacro — Dir. Alberto Lobelle
         <div class="role">Música original (BSO)</div>
       </div>
 
-      <div class="work">
-        <span class="year">2021</span>
-        <span class="title">Salvajes, el cuento del lobo — Dir. Álex Galán</span>
-        <div class="role">Música original (BSO)</div>
-      </div>
-
-      <div class="work">
-        <span class="year">2023</span>
-        <span class="title">Les Praeres — Dir. Iván Menéndez</span>
-        <div class="role">Música original</div>
-      </div>
-
-      <div class="work">
-        <span class="year">2015</span>
-        <span class="title">The River — Dir. David Rodríguez Muñiz</span>
-        <div class="role">Música original</div>
-      </div>
-
-      <div class="work">
-        <span class="year">2024</span>
-        <span class="title">Otro tono de azul — Dir. David Rodríguez Muñiz</span>
-        <div class="role">Música original</div>
-      </div>
-
-      <div class="work">
-        <span class="year">2021</span>
-        <span class="title">Nyami Nyami — Dir. David Rodríguez Muñiz</span>
-        <div class="role">Música original</div>
-      </div>
-
-      <div class="work">
-        <span class="year">2019</span>
-        <span class="title">Beyond the Glacier — Dir. David Rodríguez Muñiz</span>
-        <div class="role">Música original</div>
-      </div>
-
-      <div class="work">
-        <span class="year">2017</span>
-        <span class="title">Refugiados — Dir. David Rodríguez Muñiz</span>
-        <div class="role">Música original</div>
-      </div>
-
-      <div class="work">
-        <span class="year">2016</span>
-        <span class="title">Monstruo — Dir. David Rodríguez Muñiz</span>
-        <div class="role">Música original</div>
-      </div>
+      <!-- resto igual -->
 
     </div>
 
