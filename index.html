@@ -23,15 +23,26 @@ body{
 header{
   position:fixed;
   top:0;
+  left:0;
   width:100%;
   background:#f5f5f3;
   border-bottom:1px solid #ddd;
-  padding:14px 20px;   /* ← antes era 14px 0 */
+  padding:14px 0;
   font-size:12px;
   letter-spacing:0.12em;
   z-index:1000;
-  text-align:right;    /* alineamos a la derecha */
+
+  display:flex;
+  justify-content:flex-end;   /* lo manda a la derecha */
+  align-items:center;
 }
+
+header a{
+  margin-right:20px;          /* aire desde el borde */
+  text-decoration:none;
+  color:inherit;
+}
+
 
 
 /* Link del header */
