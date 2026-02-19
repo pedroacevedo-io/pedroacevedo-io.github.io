@@ -28,14 +28,33 @@ header{
   z-index:1000;
 }
 
+/* Barra completa */
 .header-inner{
-  max-width:1100px;
-  margin:0 auto;
-  padding:14px 30px;
+  width:100%;
+  padding:14px 40px; /* margen visual lateral */
   display:flex;
   justify-content:space-between;
   align-items:center;
+  box-sizing:border-box;
 }
+
+/* Navegación */
+.nav{
+  display:flex;
+  gap:40px;
+  font-size:12px;
+  letter-spacing:0.12em;
+}
+
+.nav a{
+  text-decoration:none;
+  color:inherit;
+}
+
+.nav a:hover{
+  opacity:.6;
+}
+
 
 /* Logo izquierda (vacío por ahora) */
 .logo{
