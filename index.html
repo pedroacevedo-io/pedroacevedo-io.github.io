@@ -18,7 +18,7 @@ body{
   text-align:center;
 }
 
-/* HEADER FLEXIBLE */
+/* HEADER */
 header{
   position:fixed;
   top:0;
@@ -28,46 +28,21 @@ header{
   z-index:1000;
 }
 
-/* Barra completa */
 .header-inner{
   width:100%;
-  padding:14px 40px; /* margen visual lateral */
+  padding:14px 40px;
   display:flex;
   justify-content:space-between;
   align-items:center;
   box-sizing:border-box;
+  font-size:12px;
+  letter-spacing:0.12em;
 }
 
 /* Navegación */
 .nav{
   display:flex;
   gap:40px;
-  font-size:12px;
-  letter-spacing:0.12em;
-}
-
-.nav a{
-  text-decoration:none;
-  color:inherit;
-}
-
-.nav a:hover{
-  opacity:.6;
-}
-
-
-/* Logo izquierda (vacío por ahora) */
-.logo{
-  font-size:12px;
-  letter-spacing:0.12em;
-}
-
-/* Navegación derecha */
-.nav{
-  display:flex;
-  gap:30px;
-  font-size:12px;
-  letter-spacing:0.12em;
 }
 
 .nav a{
@@ -133,14 +108,9 @@ h1{
 
 <header>
   <div class="header-inner">
-    <div class="logo">
-      <!-- Futuro: Pedro Acevedo o nada -->
-    </div>
-
+    <div></div>
     <nav class="nav">
-      <!-- Puedes añadir aquí más botones cuando quieras -->
-      <!-- <a href="trabajos.html">TRABAJOS</a> -->
-      <!-- <a href="bio.html">BIO</a> -->
+      <a href="proyectos.html">PROYECTOS</a>
       <a href="contacto.html">CONTACTO</a>
     </nav>
   </div>
